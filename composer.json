@@ -1,5 +1,5 @@
 {
-    "name":         "thrace/datagrid-bundle",
+    "name":         "primjeri/datagrid-bundle",
     "description":  "This bundle provides easy creating of jqGrid datagrids",
     "keywords":     ["datagrid", "jqGrid", "jQuery", "Symfony"],
     "type":         "symfony-bundle",
