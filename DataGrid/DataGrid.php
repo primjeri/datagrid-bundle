@@ -1,13 +1,13 @@
 <?php 
 /*
- * This file is part of ThraceDataGridBundle
+ * This file is part of PrimjeriDataGridBundle
  *
  * (c) Nikolay Georgiev <azazen09@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace Thrace\DataGridBundle\DataGrid;
+namespace Primjeri\DataGridBundle\DataGrid;
 
 /**
  * Default implementation of the DataGridInterface
@@ -240,7 +240,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getName()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getName()
      */
     public function getName()
     {
@@ -249,7 +249,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setName()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setName()
      */
     public function setName($name)
     {
@@ -260,7 +260,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::setDriver()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::setDriver()
      */
     public function setDriver($driver)
     {
@@ -277,7 +277,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::getDriver()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::getDriver()
      */
     public function getDriver()
     {
@@ -289,7 +289,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getCaption()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getCaption()
      */
     public function getCaption()
     {
@@ -298,7 +298,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setCaption()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setCaption()
      */
     public function setCaption($caption)
     {
@@ -309,7 +309,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getHideGrid()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getHideGrid()
      */
     public function getHideGrid()
     {
@@ -318,7 +318,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setHideGrid()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setHideGrid()
      */
     public function setHideGrid($bool)
     {
@@ -329,7 +329,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setHiddenGrid()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setHiddenGrid()
      */
     public function setHiddenGrid($bool)
     {
@@ -340,7 +340,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getHiddenGrid()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getHiddenGrid()
      */
     public function getHiddenGrid()
     {
@@ -349,7 +349,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getHeight()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getHeight()
      */
     public function getHeight()
     {
@@ -358,7 +358,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setHeight()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setHeight()
      */
     public function setHeight($height)
     {
@@ -369,7 +369,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getAutoWidth()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getAutoWidth()
      */
     public function getAutoWidth()
     {
@@ -378,7 +378,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setAutoWidth()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setAutoWidth()
      */
     public function setAutoWidth($bool)
     {
@@ -389,7 +389,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setForceFit()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setForceFit()
      */
     public function setForceFit($bool)
     {
@@ -400,7 +400,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getForceFit()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getForceFit()
      */
     public function getForceFit()
     {
@@ -409,7 +409,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setShrinkToFit()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setShrinkToFit()
      */
     public function setShrinkToFit($bool)
     {
@@ -419,7 +419,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getShrinkToFit()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getShrinkToFit()
      */
     public function getShrinkToFit()
     {
@@ -428,7 +428,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setColNames()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setColNames()
      */
     public function setColNames(array $colNames)
     {
@@ -439,7 +439,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getColNames()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getColNames()
      */
     public function getColNames()
     {
@@ -451,7 +451,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setColModel()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setColModel()
      */
     public function setColModel(array $colModels)
     {
@@ -468,7 +468,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getColModel()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getColModel()
      */
     public function getColModel()
     {
@@ -481,7 +481,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::setData()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::setData()
      */
     public function setData(array $data)
     {
@@ -491,7 +491,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::getData()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::getData()
      */
     public function getData()
     {
@@ -500,7 +500,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setQueryBuilder()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setQueryBuilder()
      */
     public function setQueryBuilder($qb)
     {
@@ -511,7 +511,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getQueryBuilder()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getQueryBuilder()
      */
     public function getQueryBuilder()
     {
@@ -520,7 +520,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::enablePager()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::enablePager()
      */
     public function enablePager($bool)
     {
@@ -531,7 +531,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::isPagerEnabled()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::isPagerEnabled()
      */
     public function isPagerEnabled()
     {
@@ -540,7 +540,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::isViewRecordsEnabled()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::isViewRecordsEnabled()
      */
     public function isViewRecordsEnabled()
     {
@@ -549,7 +549,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::enableViewRecords()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::enableViewRecords()
      */
     public function enableViewRecords($bool)
     {
@@ -560,7 +560,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getRowNum()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getRowNum()
      */
     public function getRowNum()
     {
@@ -569,7 +569,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setRowNum()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setRowNum()
      */
     public function setRowNum($rowNum)
     {
@@ -580,7 +580,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setRowList()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setRowList()
      */
     public function setRowList(Array $rowList)
     {
@@ -591,7 +591,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getRowList()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getRowList()
      */
     public function getRowList()
     {
@@ -600,7 +600,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setSortName()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setSortName()
      */
     public function setSortName($sortname)
     {
@@ -611,7 +611,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getSortName()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getSortName()
      */
     public function getSortName()
     {
@@ -620,7 +620,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setSortOrder()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setSortOrder()
      */
     public function setSortOrder($sortorder)
     {
@@ -636,7 +636,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getSortOrder()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getSortOrder()
      */
     public function getSortOrder()
     {
@@ -645,7 +645,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::isGroupingEnabled()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::isGroupingEnabled()
      */
     public function isGroupingEnabled()
     {
@@ -654,7 +654,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::enableGrouping()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::enableGrouping()
      */
     public function enableGrouping($bool)
     {
@@ -665,7 +665,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setGroupingViewOptions()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setGroupingViewOptions()
      */
     public function setGroupingViewOptions(array $groupingViewOptions)
     {
@@ -676,7 +676,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getGroupingView()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getGroupingView()
      */
     public function getGroupingViewOptions()
     {
@@ -685,7 +685,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::enableRowNumbers()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::enableRowNumbers()
      */
     public function enableRowNumbers($bool)
     {
@@ -696,7 +696,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::isRowNumbersEnabled()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::isRowNumbersEnabled()
      */
     public function isRowNumbersEnabled()
     {
@@ -705,7 +705,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::enableSortable()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::enableSortable()
      */
     public function enableSortable($bool)
     {
@@ -716,7 +716,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::isSortableEnabled()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::isSortableEnabled()
      */
     public function isSortableEnabled()
     {
@@ -725,7 +725,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::setSearchOptions()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::setSearchOptions()
      */
     public function setSearchOptions(array $searchOptions)
     {
@@ -740,7 +740,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::getSearchOptions()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::getSearchOptions()
      */
     public function getSearchOptions()
     {
@@ -753,7 +753,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::enableSearchButton()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::enableSearchButton()
      */
     public function enableSearchButton($bool)
     {
@@ -764,7 +764,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::isSearchButtonEnabled()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::isSearchButtonEnabled()
      */
     public function isSearchButtonEnabled()
     {
@@ -773,7 +773,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::enableAddButton()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::enableAddButton()
      */
     public function enableAddButton($bool)
     {
@@ -784,7 +784,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::isAddButtonEnabled()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::isAddButtonEnabled()
      */
     public function isAddButtonEnabled()
     {
@@ -793,7 +793,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setAddBtnUri()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setAddBtnUri()
      */
     public function setAddBtnUri($uri)
     {
@@ -804,7 +804,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getAddBtnUri()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getAddBtnUri()
      */
     public function getAddBtnUri()
     {
@@ -813,7 +813,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::enableEditButton()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::enableEditButton()
      */
     public function enableEditButton($bool)
     {
@@ -824,7 +824,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::isEditButtonEnabled()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::isEditButtonEnabled()
      */
     public function isEditButtonEnabled()
     {
@@ -833,7 +833,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setEditBtnUri()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setEditBtnUri()
      */
     public function setEditBtnUri($uri)
     {
@@ -844,7 +844,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getEditBtnUri()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getEditBtnUri()
      */
     public function getEditBtnUri()
     {
@@ -853,7 +853,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::enableDeleteButton()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::enableDeleteButton()
      */
     public function enableDeleteButton($bool)
     {
@@ -864,7 +864,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::isDeleteButtonEnabled()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::isDeleteButtonEnabled()
      */
     public function isDeleteButtonEnabled()
     {
@@ -873,7 +873,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setDeleteBtnUri()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setDeleteBtnUri()
      */
     public function setDeleteBtnUri($uri)
     {
@@ -884,7 +884,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getDeleteBtnUri()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getDeleteBtnUri()
      */
     public function getDeleteBtnUri()
     {
@@ -893,7 +893,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::enableMultiSelect()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::enableMultiSelect()
      */
     public function enableMultiSelect($bool)
     {
@@ -904,7 +904,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::isMultiSelectEnabled()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::isMultiSelectEnabled()
      */
     public function isMultiSelectEnabled()
     {
@@ -913,7 +913,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::enableMassActions()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::enableMassActions()
      */
     public function enableMassActions($bool)
     {
@@ -924,7 +924,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::isMassActionsEnabled()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::isMassActionsEnabled()
      */
     public function isMassActionsEnabled()
     {
@@ -933,7 +933,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setMassActions()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setMassActions()
      */
     public function setMassActions(array $massActions)
     {
@@ -944,7 +944,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getActions()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getActions()
      */
     public function getMassActions()
     {
@@ -953,7 +953,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::setDependentDataGrids()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::setDependentDataGrids()
      */
     public function setDependentDataGrids(array $dependentDataGrids)
     {
@@ -964,7 +964,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::getDependentDataGrids()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::getDependentDataGrids()
      */
     public function getDependentDataGrids()
     {
@@ -973,7 +973,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setAsDependentGrid()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setAsDependentGrid()
      */
     public function setAsDependentGrid($bool)
     {
@@ -984,7 +984,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::isDependentGrid()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::isDependentGrid()
      */
     public function isDependentGrid()
     {
@@ -993,7 +993,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setTreeName()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setTreeName()
      */
     public function setTreeName($treeName)
     {
@@ -1004,7 +1004,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getTreeName()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getTreeName()
      */
     public function getTreeName()
     {
@@ -1013,7 +1013,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::enableMultiSelectSortable()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::enableMultiSelectSortable()
      */
     public function enableMultiSelectSortable($bool)
     {
@@ -1023,7 +1023,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::isMultiSelectSortableEnabled()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::isMultiSelectSortableEnabled()
      */
     public function isMultiSelectSortableEnabled()
     {
@@ -1032,7 +1032,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::setMultiSelectSortableColumn()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setMultiSelectSortableColumn()
      */
     public function setMultiSelectSortableColumn($column)
     {
@@ -1042,7 +1042,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see Thrace\DataGridBundle\DataGrid.DataGridInterface::getMultiSelectSortableColumn()
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getMultiSelectSortableColumn()
      */
     public function getMultiSelectSortableColumn()
     {
@@ -1051,7 +1051,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::hasCustomButton()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::hasCustomButton()
      */
     public function hasCustomButton($name)
     {
@@ -1060,7 +1060,7 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::addCustomButton()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::addCustomButton()
      */
     public function addCustomButton(CustomButton $customButton)
     {
@@ -1071,7 +1071,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::setCustomButtons($customButtons)
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::setCustomButtons($customButtons)
      */
     public function setCustomButtons(array $customButtons)
     {
@@ -1086,7 +1086,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::getCustomButton()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::getCustomButton()
      */
     public function getCustomButton($name)
     {
@@ -1101,7 +1101,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::getCustomButtons()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::getCustomButtons()
      */
     public function getCustomButtons()
     {
@@ -1110,7 +1110,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::getCustomButtonsAsOptions()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::getCustomButtonsAsOptions()
      */
     public function getCustomButtonsAsOptions()
     {
@@ -1125,7 +1125,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::setPostData()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::setPostData()
      */
     public function setPostData(array $postData)
     {
@@ -1135,7 +1135,7 @@ class DataGrid implements DataGridInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridInterface::getPostData()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::getPostData()
      */
     public function getPostData()
     {

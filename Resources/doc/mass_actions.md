@@ -1,4 +1,4 @@
-ThraceDataGrid Mass Actions
+PrimjeriDataGrid Mass Actions
 ============================
 This bundle gives you a convenient way to create mass actions.
 You can manipulate large amount of data at once. 
@@ -22,7 +22,7 @@ namespace AppBundle\DataGrid\EventListener;
 
 use Doctrine\ORM\Query;
 
-use Thrace\DataGridBundle\Event\MassActionEvent;
+use Primjeri\DataGridBundle\Event\MassActionEvent;
 
 use AppBundle\DataGrid\UserManagementBuilder;
 
@@ -93,7 +93,7 @@ class UserManagementMassActionListener
 }
 ```
 
-When event *thrace_datagrid.onMassAction* is dispatched then method onMassAction is called.
+When event *primjeri_datagrid.onMassAction* is dispatched then method onMassAction is called.
 
 We get the event object with the following data:
  - name (datagrid name)
@@ -115,7 +115,7 @@ Mass actions have to be registered in service container. Here is the example:
 	class="AppBundle\DataGrid\EventListener\UserManagementMassActionListener"
 >
 	<argument type="service" id="doctrine.orm.entity_manager" />
-	<tag name="kernel.event_listener" event="thrace_datagrid.onMassAction" method="onMassAction" />
+	<tag name="kernel.event_listener" event="primjeri_datagrid.onMassAction" method="onMassAction" />
 </service>
 ```
 
@@ -135,7 +135,7 @@ use Symfony\Component\Routing\RouterInterface;
 
 use Symfony\Component\Translation\TranslatorInterface;
 
-use Thrace\DataGridBundle\DataGrid\DataGridFactoryInterface;
+use Primjeri\DataGridBundle\DataGrid\DataGridFactoryInterface;
 
 class UserManagementBuilder
 {
@@ -167,13 +167,13 @@ class UserManagementBuilder
 
 ## Step 4) (Optional) Translations of mass action buttons:
 
-Translations are located in [ThraceDataGridBundle](../translations/ThraceDataGridBundle.en.xlf)
+Translations are located in [PrimjeriDataGridBundle](../translations/PrimjeriDataGridBundle.en.xlf)
 
 You can add more translation by overwriting the file in *app/Resource* folder or setting the translation domain in the config:
 
 ```yaml
 # app/config/config.yml
-thrace_data_grid:
+primjeri_data_grid:
 	translation_domain: YourTranslationDomain
 ```
 
@@ -182,7 +182,7 @@ thrace_data_grid:
 ## Step 5) (Optional) Using jQuery mass action event.
 
 When mass action is executed on the server sends response back to the client and jqgrid refreshes 
-then dispatches jQuery event *thrace_datagrid.event.massAction*. The event provides you with the following data:
+then dispatches jQuery event *primjeri_datagrid.event.massAction*. The event provides you with the following data:
  - name (name of the grid)
  - action (mass action name)
  - response (response of the server)
@@ -190,7 +190,7 @@ then dispatches jQuery event *thrace_datagrid.event.massAction*. The event provi
  If you want to listen to this event: 
  
  ``` javascript
- jQuery('body').bind('thrace_datagrid.event.massAction', function(event){})
+ jQuery('body').bind('primjeri_datagrid.event.massAction', function(event){})
  ```
  
  That's all. You see how easy is to create mass actions.

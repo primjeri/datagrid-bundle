@@ -1,13 +1,13 @@
 <?php
 /*
- * This file is part of ThraceDataGridBundle
+ * This file is part of PrimjeriDataGridBundle
  *
  * (c) Nikolay Georgiev <symfonist@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace Thrace\DataGridBundle\Event;
+namespace Primjeri\DataGridBundle\Event;
 
 use Symfony\Component\EventDispatcher\Event;
 
@@ -70,7 +70,7 @@ class RowEvent extends Event
      * Provides fluent interface
      *
      * @param boolean $bool            
-     * @return \Thrace\Bundle\DataGridBundle\Event\RowEvent
+     * @return \Primjeri\Bundle\DataGridBundle\Event\RowEvent
      */
     public function setSuccess ($bool)
     {
@@ -95,7 +95,7 @@ class RowEvent extends Event
      * Provides fluent interface
      *
      * @param integer $id            
-     * @return \Thrace\Bundle\DataGridBundle\Event\RowEvent
+     * @return \Primjeri\Bundle\DataGridBundle\Event\RowEvent
      */
     public function setId ($id)
     {
@@ -120,7 +120,7 @@ class RowEvent extends Event
      * Provides fluent interface
      *
      * @param array $errors            
-     * @return \Thrace\DataGridBundle\Event\RowEvent
+     * @return \Primjeri\DataGridBundle\Event\RowEvent
      */
     public function setErrors (array $errors)
     {
@@ -143,7 +143,7 @@ class RowEvent extends Event
      * Sets data
      * 
      * @param array $data
-     * @return \Thrace\DataGridBundle\Event\RowEvent
+     * @return \Primjeri\DataGridBundle\Event\RowEvent
      */
     public function setData(array $data)
     {

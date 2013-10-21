@@ -1,13 +1,13 @@
 <?php
 /*
- * This file is part of ThraceDataGridBundle
+ * This file is part of PrimjeriDataGridBundle
  *
  * (c) Nikolay Georgiev <azazen09@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace Thrace\DataGridBundle;
+namespace Primjeri\DataGridBundle;
 
 /**
  * This class describes all events in DataGridBundle
@@ -20,40 +20,40 @@ class DataGridEvents
     /**
      * Event is dispatched when mass action is triggered
      */
-    const onMassAction = 'thrace_datagrid.onMassAction';
+    const onMassAction = 'primjeri_datagrid.onMassAction';
     
     /**
      * Event is dispatched when row position is changed
      */
-    const onRowPositionChange = 'thrace_datagrid.onRowPositionChange';
+    const onRowPositionChange = 'primjeri_datagrid.onRowPositionChange';
 
     /**
      * Event is dispatched when adding new record
      */
-    const onRowAdd = 'thrace_datagrid.onRowAdd';
+    const onRowAdd = 'primjeri_datagrid.onRowAdd';
 
     /**
      * Event is dispatched when editing record
      */
-    const onRowEdit = 'thrace_datagrid.onRowEdit';
+    const onRowEdit = 'primjeri_datagrid.onRowEdit';
 
     /**
      * Event is dispatched when adding deleting record
      */
-    const onRowDel = 'thrace_datagrid.onRowDel';
+    const onRowDel = 'primjeri_datagrid.onRowDel';
     
     /**
      * Event is dispatched after query builder is ready
      */
-    const onQueryBuilderReady = 'thrace_datagrid.onQueryBuilderReady';
+    const onQueryBuilderReady = 'primjeri_datagrid.onQueryBuilderReady';
     
     /**
      * Event is dispatched after query is ready
      */
-    const onQueryReady = 'thrace_datagrid.onQueryReady';
+    const onQueryReady = 'primjeri_datagrid.onQueryReady';
     
     /**
      * Event is dispatched right after data is ready
      */
-    const onDataReady = 'thrace_datagrid.onDataReady';
+    const onDataReady = 'primjeri_datagrid.onDataReady';
 }

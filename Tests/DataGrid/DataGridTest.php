@@ -1,16 +1,16 @@
 <?php
-namespace Thrace\DataGridBundle\Tests\DataGrid;
+namespace Primjeri\DataGridBundle\Tests\DataGrid;
 
-use Thrace\DataGridBundle\DataGrid\DataGridInterface;
+use Primjeri\DataGridBundle\DataGrid\DataGridInterface;
 
-use Thrace\DataGridBundle\DataGrid\DataGridFactory;
+use Primjeri\DataGridBundle\DataGrid\DataGridFactory;
 
 class DataGridTest extends \PHPUnit_Framework_TestCase
 {
     public function testCreateDataGridWithEmptyParameters()
     {
         $dataGrid = $this->createDataGrid('name');
-        $this->assertInstanceOf('\Thrace\DataGridBundle\DataGrid\DataGridInterface', $dataGrid);
+        $this->assertInstanceOf('\Primjeri\DataGridBundle\DataGrid\DataGridInterface', $dataGrid);
     }
     
     public function testName()
@@ -461,7 +461,7 @@ class DataGridTest extends \PHPUnit_Framework_TestCase
     {
         $dataGrid = $this->createDataGrid();
         $customButton = $this
-            ->getMockBuilder('Thrace\DataGridBundle\DataGrid\CustomButton')
+            ->getMockBuilder('Primjeri\DataGridBundle\DataGrid\CustomButton')
             ->disableOriginalConstructor()->getMock()
         ;
         
@@ -475,14 +475,14 @@ class DataGridTest extends \PHPUnit_Framework_TestCase
         $dataGrid->addCustomButton($customButton);
         $this->assertCount(1, $dataGrid->getCustomButtons());
         $this->assertTrue($dataGrid->hasCustomButton('b'));
-        $this->assertInstanceOf('Thrace\DataGridBundle\DataGrid\CustomButton', $dataGrid->getCustomButton('b'));
+        $this->assertInstanceOf('Primjeri\DataGridBundle\DataGrid\CustomButton', $dataGrid->getCustomButton('b'));
     }
     
     public function testSetCustomButtons()
     {
         $dataGrid = $this->createDataGrid();
         $customButton = $this
-            ->getMockBuilder('Thrace\DataGridBundle\DataGrid\CustomButton')
+            ->getMockBuilder('Primjeri\DataGridBundle\DataGrid\CustomButton')
             ->disableOriginalConstructor()->getMock()
         ;
         
@@ -495,14 +495,14 @@ class DataGridTest extends \PHPUnit_Framework_TestCase
         $dataGrid->setCustomButtons(array($customButton));
         $this->assertCount(1, $dataGrid->getCustomButtons());
         $this->assertTrue($dataGrid->hasCustomButton('b'));
-        $this->assertInstanceOf('Thrace\DataGridBundle\DataGrid\CustomButton', $dataGrid->getCustomButton('b'));
+        $this->assertInstanceOf('Primjeri\DataGridBundle\DataGrid\CustomButton', $dataGrid->getCustomButton('b'));
     }
     
     public function testGetCustomButtonsAsOptions()
     {
         $dataGrid = $this->createDataGrid();
         $customButton = $this
-            ->getMockBuilder('Thrace\DataGridBundle\DataGrid\CustomButton')
+            ->getMockBuilder('Primjeri\DataGridBundle\DataGrid\CustomButton')
             ->disableOriginalConstructor()->getMock()
         ;
         

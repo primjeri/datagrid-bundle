@@ -1,13 +1,13 @@
 <?php
 /*
- * This file is part of ThraceDataGridBundle
+ * This file is part of PrimjeriDataGridBundle
  *
  * (c) Nikolay Georgiev <symfonist@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace Thrace\DataGridBundle\Event;
+namespace Primjeri\DataGridBundle\Event;
 
 use Symfony\Component\EventDispatcher\Event;
 
@@ -122,7 +122,7 @@ class MassActionEvent extends Event
      * Sets extra data used for response
      * 
      * @param array $extraData
-     * @return Thrace\DataGridBundle\Event\MassActionEvent
+     * @return Primjeri\DataGridBundle\Event\MassActionEvent
      */
     public function setExtraData(array $extraData)
     {

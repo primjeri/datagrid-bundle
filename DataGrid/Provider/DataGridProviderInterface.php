@@ -1,13 +1,13 @@
 <?php
 /*
- * This file is part of ThraceDataGridBundle
+ * This file is part of PrimjeriDataGridBundle
  *
  * (c) Nikolay Georgiev <azazen09@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace Thrace\DataGridBundle\DataGrid\Provider;
+namespace Primjeri\DataGridBundle\DataGrid\Provider;
 
 /**
  * Interface implemented by a ContainerAwareProvider class.
@@ -22,7 +22,7 @@ interface DataGridProviderInterface
      * Retrieves a datagrid by its name
      *
      * @param string $name            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      * @throws \InvalidArgumentException if the datagrid does not exists
      */
     function get ($name);

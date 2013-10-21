@@ -1,17 +1,17 @@
 <?php
-namespace Thrace\DataGridBundle\Tests\DataGrid\DataGridFactoryTest;
+namespace Primjeri\DataGridBundle\Tests\DataGrid\DataGridFactoryTest;
 
-use Thrace\ComponentBundle\Test\Tool\BaseTestCase;
+use Primjeri\ComponentBundle\Test\Tool\BaseTestCase;
 
 class DataGridFactoryTest extends BaseTestCase
 {
 
     public function testCreateDataGrid()
     {
-        $factory = new \Thrace\DataGridBundle\DataGrid\DataGridFactory();
+        $factory = new \Primjeri\DataGridBundle\DataGrid\DataGridFactory();
         $dataGrid = $factory->createDataGrid('test');
         
-        $this->assertInstanceOf('\Thrace\DataGridBundle\DataGrid\DataGridInterface', $dataGrid);
+        $this->assertInstanceOf('\Primjeri\DataGridBundle\DataGrid\DataGridInterface', $dataGrid);
         $this->assertSame('test', $dataGrid->getName());
 
     }   

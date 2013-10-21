@@ -120,7 +120,7 @@ use Symfony\Component\Routing\RouterInterface;
 
 use Symfony\Component\Translation\TranslatorInterface;
 
-use Thrace\DataGridBundle\DataGrid\DataGridFactoryInterface;
+use Primjeri\DataGridBundle\DataGrid\DataGridFactoryInterface;
 
 class AddressManagementBuilder
 {
@@ -191,7 +191,7 @@ class AddressManagementBuilder
 
 ### Step 3) Register and render the datagrid. 
 
-For more information how to register and render datagrids click [here](https://github.com/thrace-project/datagrid-bundle/blob/master/Resources/doc/index.md)
+For more information how to register and render datagrids click [here](https://github.com/primjeri-project/datagrid-bundle/blob/master/Resources/doc/index.md)
 
 When you load datagrid in browser you see that sorting, searching and pager are disabled. We just do not need them because we sort small amount of data otherwise it makes no sense to sort rows manually.
 
@@ -203,7 +203,7 @@ namespace AppBundle\DataGrid\EventListener;
 
 use AppBundle\DataGrid\AddressManagementBuilder;
 
-use Thrace\DataGridBundle\Event\RowPositionChangeEvent;
+use Primjeri\DataGridBundle\Event\RowPositionChangeEvent;
 
 class AddressManagementDataGridRowPositionChangeListener
 {
@@ -233,20 +233,20 @@ class AddressManagementDataGridRowPositionChangeListener
 <service id="app.datagrid.event_listener.address_management_row_position_change" 
 	class="%app.datagrid.event_listener.address_management_row_position_change.class%"
 >
-	<tag name="kernel.event_listener" event="thrace_datagrid.onRowPositionChange" method="onRowPositionChange" />
+	<tag name="kernel.event_listener" event="primjeri_datagrid.onRowPositionChange" method="onRowPositionChange" />
 </service>
 ```
 
-**Theory of operation:** When you sort a row an ajax post request is sent to *DataGridController* and then is dispatched *thrace_datagrid.onRowPositionChange* event.
+**Theory of operation:** When you sort a row an ajax post request is sent to *DataGridController* and then is dispatched *primjeri_datagrid.onRowPositionChange* event.
 
 We catch the event with the lister registered in the example above. We receive datagrid name, id and position of the row.
 You have to do the actual sorting by yourself. There is a very good doctrine extension [Sortable](https://github.com/l3pp4rd/DoctrineExtensions/blob/master/doc/sortable.md).
 You may want to set some extra data with the response use *setExtraData()* method.
-After response is received by the client then datagrid refreshes and dispatches jQuery event *thrace_datagrid.event.sortable*.
+After response is received by the client then datagrid refreshes and dispatches jQuery event *primjeri_datagrid.event.sortable*.
 You can listen to this event by registering jQuery event listener:
 
 ``` javascript
-jQuery('body').bind('thrace_datagrid.event.sortable', function(event){});
+jQuery('body').bind('primjeri_datagrid.event.sortable', function(event){});
 ```
 
 **Note:** The event has the following properties: name, rowId, rowPosition and response.

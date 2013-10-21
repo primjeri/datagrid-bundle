@@ -1,5 +1,5 @@
 <?php
-namespace Thrace\DataGridBundle\Tests\Fixture\Entity;
+namespace Primjeri\DataGridBundle\Tests\Fixture\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -25,7 +25,7 @@ class GridDependent
     protected $name;
     
     /**
-     * @ORM\ManyToOne(targetEntity="\Thrace\DataGridBundle\Tests\Fixture\Entity\GridMaster",  inversedBy="grids")
+     * @ORM\ManyToOne(targetEntity="\Primjeri\DataGridBundle\Tests\Fixture\Entity\GridMaster",  inversedBy="grids")
      */   
     protected $master;
 

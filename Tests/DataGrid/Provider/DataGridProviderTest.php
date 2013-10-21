@@ -1,7 +1,7 @@
 <?php
-namespace Thrace\DataGridBundle\Tests\DataGrid\Provider;
+namespace Primjeri\DataGridBundle\Tests\DataGrid\Provider;
 
-use Thrace\DataGridBundle\DataGrid\Provider\DataGridProvider;
+use Primjeri\DataGridBundle\DataGrid\Provider\DataGridProvider;
 
 class DataGridProviderTest extends \PHPUnit_Framework_TestCase
 {
@@ -20,7 +20,7 @@ class DataGridProviderTest extends \PHPUnit_Framework_TestCase
     
     public function testGetExistentDataGrid()
     {
-        $dataGrid = $this->getMock('Thrace\DataGridBundle\DataGrid\DataGridInterface');
+        $dataGrid = $this->getMock('Primjeri\DataGridBundle\DataGrid\DataGridInterface');
         
         $container = $this->getMock('Symfony\Component\DependencyInjection\ContainerInterface');
         $container->expects($this->once())

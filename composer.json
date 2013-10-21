@@ -23,14 +23,14 @@
         "symfony/twig-bundle": "2.*"
     },
     "require-dev": {
-        "thrace/component-bundle": "*",
+        "primjeri/component-bundle": "*",
    		"phpunit/phpunit": "3.7.*@dev",
    		"symfony/doctrine-bridge": "~2.3",
         "doctrine/orm": "2.*",
         "doctrine/doctrine-bundle": "1.*"
     },
     "autoload":     {
-        "psr-0": { "Thrace\\DataGridBundle": "" }
+        "psr-0": { "Primjeri\\DataGridBundle": "" }
     },
-    "target-dir": "Thrace/DataGridBundle"
+    "target-dir": "Primjeri/DataGridBundle"
 }

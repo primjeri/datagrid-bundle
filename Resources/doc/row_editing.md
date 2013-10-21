@@ -1,7 +1,7 @@
 Row editing
 ===========
 
-ThraceDataGridBundle provides two ways to add/edit/delete a row.
+PrimjeriDataGridBundle provides two ways to add/edit/delete a row.
 
 ## First way) Inline editing. 
 
@@ -89,7 +89,7 @@ use Symfony\Component\Routing\RouterInterface;
 
 use Symfony\Component\Translation\TranslatorInterface;
 
-use Thrace\DataGridBundle\DataGrid\DataGridFactoryInterface;
+use Primjeri\DataGridBundle\DataGrid\DataGridFactoryInterface;
 
 class ProductManagementBuilder
 {
@@ -178,7 +178,7 @@ use Symfony\Component\DependencyInjection\ContainerAware;
 
 use AppBundle\DataGrid\ProductManagementBuilder;
 
-use Thrace\DataGridBundle\Event\RowEvent;
+use Primjeri\DataGridBundle\Event\RowEvent;
 
 class ProductManagementRowListener extends ContainerAware
 {
@@ -276,9 +276,9 @@ Register the listener:
 		<argument type="service" id="service_container" />
 	</call>
 	
-	<tag name="kernel.event_listener" event="thrace_datagrid.onRowAdd" method="onRowAdd" />
-	<tag name="kernel.event_listener" event="thrace_datagrid.onRowEdit" method="onRowEdit" />
-	<tag name="kernel.event_listener" event="thrace_datagrid.onRowDel" method="onRowDelete" />
+	<tag name="kernel.event_listener" event="primjeri_datagrid.onRowAdd" method="onRowAdd" />
+	<tag name="kernel.event_listener" event="primjeri_datagrid.onRowEdit" method="onRowEdit" />
+	<tag name="kernel.event_listener" event="primjeri_datagrid.onRowDel" method="onRowDelete" />
 </service>
 ```
 
@@ -321,7 +321,7 @@ use Symfony\Component\Routing\RouterInterface;
 
 use Symfony\Component\Translation\TranslatorInterface;
 
-use Thrace\DataGridBundle\DataGrid\DataGridFactoryInterface;
+use Primjeri\DataGridBundle\DataGrid\DataGridFactoryInterface;
 
 class ProductManagementBuilder
 {

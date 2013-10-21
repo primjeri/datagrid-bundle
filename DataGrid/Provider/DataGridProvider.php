@@ -1,13 +1,13 @@
 <?php
 /*
- * This file is part of ThraceDataGridBundle
+ * This file is part of PrimjeriDataGridBundle
  *
  * (c) Nikolay Georgiev <azazen09@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace Thrace\DataGridBundle\DataGrid\Provider;
+namespace Primjeri\DataGridBundle\DataGrid\Provider;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -45,7 +45,7 @@ class DataGridProvider implements DataGridProviderInterface
     /**
      * (non-PHPdoc)
      *
-     * @see Thrace\DataGridBundle\DataGrid\Provider.DataGridProviderInterface::get()
+     * @see Primjeri\DataGridBundle\DataGrid\Provider.DataGridProviderInterface::get()
      */
     public function get ($name)
     {
@@ -59,7 +59,7 @@ class DataGridProvider implements DataGridProviderInterface
     /**
      * (non-PHPdoc)
      *
-     * @see Thrace\DataGridBundle\DataGrid\Provider.DataGridProviderInterface::has()
+     * @see Primjeri\DataGridBundle\DataGrid\Provider.DataGridProviderInterface::has()
      */
     public function has ($name)
     {

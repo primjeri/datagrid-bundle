@@ -1,9 +1,9 @@
 <?php
-namespace Thrace\DataGridBundle\Tests\DataGrid\DataGridFactoryTest;
+namespace Primjeri\DataGridBundle\Tests\DataGrid\DataGridFactoryTest;
 
-use Thrace\DataGridBundle\DataGrid\CustomButton;
+use Primjeri\DataGridBundle\DataGrid\CustomButton;
 
-use Thrace\ComponentBundle\Test\Tool\BaseTestCase;
+use Primjeri\ComponentBundle\Test\Tool\BaseTestCase;
 
 class CustomButtonTest extends BaseTestCase
 {

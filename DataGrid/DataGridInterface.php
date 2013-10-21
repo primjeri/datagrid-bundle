@@ -1,13 +1,13 @@
 <?php
 /*
- * This file is part of ThraceDataGridBundle
+ * This file is part of PrimjeriDataGridBundle
  *
  * (c) Nikolay Georgiev <azazen09@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace Thrace\DataGridBundle\DataGrid;
+namespace Primjeri\DataGridBundle\DataGrid;
 
 /**
  * Interface implemented by a DataGrid class.
@@ -32,7 +32,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param string $name            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setName ($name);
 
@@ -49,7 +49,7 @@ interface DataGridInterface
      * Provides a fluent interface
      * 
      * @param string $driver
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      * @throws \InvalidArgumentException
      */
     public function setDriver($driver);
@@ -67,7 +67,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param string $caption            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setCaption ($caption);
 
@@ -84,7 +84,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param boolean $bool            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setHideGrid ($bool);
 
@@ -103,7 +103,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param boolean $bool            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setHiddenGrid ($bool);
 
@@ -120,7 +120,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param integer | string (50%) | auto $height
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setHeight ($height);
 
@@ -137,7 +137,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param boolean $bool            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setAutoWidth ($bool);
 
@@ -156,7 +156,7 @@ interface DataGridInterface
      * Provides a fluent interface
      * 
      * @param boolean $bool
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setForceFit($bool);
     
@@ -175,7 +175,7 @@ interface DataGridInterface
      * Provides a fluent interface
      * 
      * @param boolean $bool
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setShrinkToFit($bool);
     
@@ -194,7 +194,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param Array<string>
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setColNames (array $colNames);
 
@@ -215,7 +215,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param Array
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      * @throws \LogicException
      */
     public function setColModel (Array $colModel);
@@ -234,7 +234,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param array
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setData(array $data);
     
@@ -253,7 +253,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param Object
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setQueryBuilder ($qb);
 
@@ -271,7 +271,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param bool $bool            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function enablePager ($bool);
 
@@ -289,7 +289,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param bool $bool            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function enableViewRecords ($bool);
 
@@ -308,7 +308,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param integer
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setRowNum ($rowNum);
 
@@ -326,7 +326,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param Array<integer>
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setRowList (array $rowList);
 
@@ -346,7 +346,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param string
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      * @throws \InvalidArgumentException
      */
     public function setSortName ($sortname);
@@ -364,7 +364,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param string
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      * @throws \InvalidArgumentException
      */
     public function setSortOrder ($sortorder);
@@ -392,7 +392,7 @@ interface DataGridInterface
      * Enables jqgrid grouping option
      *
      * @param boolean $bool            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function enableGrouping ($bool);
 
@@ -402,7 +402,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param Array<string> $groupingViewOptions            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setGroupingViewOptions (Array $groupingViewOptions);
 
@@ -419,7 +419,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param boolean $bool            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function enableRowNumbers ($bool);
 
@@ -436,7 +436,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param boolean $bool            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      * @throws \RuntimeException
      */
     public function enableSortable ($bool);
@@ -454,7 +454,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param array $searchOptions          
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      * @throws \InvalidArgumentException
      */
     public function setSearchOptions(array $searchOptions);
@@ -472,7 +472,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param boolean $bool            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function enableSearchButton ($bool);
 
@@ -489,7 +489,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param boolean $bool            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function enableAddButton ($bool);
 
@@ -506,7 +506,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param string $uri            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setAddBtnUri ($uri);
 
@@ -523,7 +523,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param boolean $bool            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function enableEditButton ($bool);
 
@@ -540,7 +540,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param string $uri            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setEditBtnUri ($uri);
 
@@ -557,7 +557,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param boolean $bool            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function enableDeleteButton ($bool);
 
@@ -574,7 +574,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param string $route            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setDeleteBtnUri ($uri);
 
@@ -591,7 +591,7 @@ interface DataGridInterface
      * Provides a fluent interface
      * 
      * @param boolean $bool
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function enableMultiSelect($bool);
     
@@ -608,7 +608,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param boolean $bool            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function enableMassActions ($bool);
 
@@ -626,7 +626,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param array<arrayMap> $massActions            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      * 
      */
     public function setMassActions (array $massActions);
@@ -644,7 +644,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param boolean $bool            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setAsDependentGrid ($bool);
 
@@ -663,7 +663,7 @@ interface DataGridInterface
      * Provides a fluent interface
      *
      * @param array $dependentDataGrids            
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      * 
      */
     public function setDependentDataGrids (array $dependentDataGrids);
@@ -682,7 +682,7 @@ interface DataGridInterface
      * Provides a fluent interface
      * 
      * @param string $treeName
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setTreeName($treeName);
     
@@ -699,7 +699,7 @@ interface DataGridInterface
      * Provides a fluent interface
      * 
      * @param boolean $bool
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function enableMultiSelectSortable($bool);
     
@@ -716,7 +716,7 @@ interface DataGridInterface
      * Provides a fluent interface
      * 
      * @param string $column
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setMultiSelectSortableColumn($column);
     
@@ -742,7 +742,7 @@ interface DataGridInterface
      * Provides a fluent interface
      * 
      * @param CustomButton $customButton
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function addCustomButton(CustomButton $customButton);
     
@@ -752,7 +752,7 @@ interface DataGridInterface
      * Provides a fluent interface
      * 
      * @param array $customButtons
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setCustomButtons(array $customButtons);
     
@@ -760,7 +760,7 @@ interface DataGridInterface
      * Gets custom buttom by name
      * 
      * @param string $name
-     * @return \Thrace\DataGridBundle\DataGrid\CustomButton
+     * @return \Primjeri\DataGridBundle\DataGrid\CustomButton
      * @throws \InvalidArgumentException
      */
     public function getCustomButton($name);
@@ -785,7 +785,7 @@ interface DataGridInterface
      * Provides a fluent interface
      * 
      * @param array $postData
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     public function setPostData(array $postData);
     

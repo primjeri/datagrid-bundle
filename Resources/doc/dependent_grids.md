@@ -19,7 +19,7 @@ use Symfony\Component\Routing\RouterInterface;
 
 use Symfony\Component\Translation\TranslatorInterface;
 
-use Thrace\DataGridBundle\DataGrid\DataGridFactoryInterface;
+use Primjeri\DataGridBundle\DataGrid\DataGridFactoryInterface;
 
 class UserManagementBuilder
 {
@@ -55,7 +55,7 @@ use Symfony\Component\Routing\RouterInterface;
 
 use Symfony\Component\Translation\TranslatorInterface;
 
-use Thrace\DataGridBundle\DataGrid\DataGridFactoryInterface;
+use Primjeri\DataGridBundle\DataGrid\DataGridFactoryInterface;
 
 class OrderManagementBuilder
 {
@@ -138,7 +138,7 @@ In the dependent datagrid we use method *DataGridInterface::setAsDependentGrid(t
 **Tip:** If you have many dependent datagrids on one page then enable these options *DataGridInterface::setHideGrid(true)* and *DataGridInterface::setHiddenGrid(true)*.
 Now all datagrids will be displayed closed.
 
-Only things left are to render both grids in the twig template for more information how to do it click [here](https://github.com/thrace-project/datagrid-bundle/blob/master/Resources/doc/index.md#rendering-datagrid).
+Only things left are to render both grids in the twig template for more information how to do it click [here](https://github.com/primjeri-project/datagrid-bundle/blob/master/Resources/doc/index.md#rendering-datagrid).
 
 You see how easy is to create dependent datagrids.
 

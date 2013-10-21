@@ -1,5 +1,5 @@
 <?php
-namespace Thrace\DataGridBundle\Tests\Fixture\Entity;
+namespace Primjeri\DataGridBundle\Tests\Fixture\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
@@ -34,7 +34,7 @@ class GridMaster
     protected $rank;
     
     /**
-     * @ORM\OneToMany(targetEntity="\Thrace\DataGridBundle\Tests\Fixture\Entity\GridDependent", mappedBy="master", cascade={"all"})
+     * @ORM\OneToMany(targetEntity="\Primjeri\DataGridBundle\Tests\Fixture\Entity\GridDependent", mappedBy="master", cascade={"all"})
      */  
     protected $grids; 
     

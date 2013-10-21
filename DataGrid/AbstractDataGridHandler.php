@@ -1,23 +1,23 @@
 <?php
 /*
- * This file is part of ThraceDataGridBundle
+ * This file is part of PrimjeriDataGridBundle
  *
  * (c) Nikolay Georgiev <azazen09@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace Thrace\DataGridBundle\DataGrid;
+namespace Primjeri\DataGridBundle\DataGrid;
 
-use Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface;
+use Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface;
 
-use Thrace\DataGridBundle\Event\DataEvent;
+use Primjeri\DataGridBundle\Event\DataEvent;
 
-use Thrace\DataGridBundle\DataGridEvents;
+use Primjeri\DataGridBundle\DataGridEvents;
 
-use Thrace\DataGridBundle\Event\QueryEvent;
+use Primjeri\DataGridBundle\Event\QueryEvent;
 
-use Thrace\DataGridBundle\DataGrid\DataGridInterface;
+use Primjeri\DataGridBundle\DataGrid\DataGridInterface;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -37,7 +37,7 @@ abstract class AbstractDataGridHandler implements DataGridHandlerInterface
     protected $dispatcher; 
     
     /**
-     * @var \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @var \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      */
     protected $dataGrid;
     
@@ -68,7 +68,7 @@ abstract class AbstractDataGridHandler implements DataGridHandlerInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface::setDispatcher()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface::setDispatcher()
      */
     public function setDispatcher(EventDispatcherInterface $dispatcher)
     {
@@ -78,7 +78,7 @@ abstract class AbstractDataGridHandler implements DataGridHandlerInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface::setDataGrid()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface::setDataGrid()
      */
     public function setDataGrid(DataGridInterface $dataGrid)
     {
@@ -88,7 +88,7 @@ abstract class AbstractDataGridHandler implements DataGridHandlerInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface::getDataGrid()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface::getDataGrid()
      */
     public function getDataGrid()
     {
@@ -101,7 +101,7 @@ abstract class AbstractDataGridHandler implements DataGridHandlerInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface::getOptions()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface::getOptions()
      */
     public function getOptions()
     {
@@ -114,7 +114,7 @@ abstract class AbstractDataGridHandler implements DataGridHandlerInterface
 
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface::getData()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface::getData()
      */
     public function getData()
     {
@@ -127,7 +127,7 @@ abstract class AbstractDataGridHandler implements DataGridHandlerInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface::getProcessedData()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface::getProcessedData()
      */
     public function getProcessedData()
     {
@@ -140,7 +140,7 @@ abstract class AbstractDataGridHandler implements DataGridHandlerInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface::setCount()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface::setCount()
      */
     public function setCount($count)
     {
@@ -151,7 +151,7 @@ abstract class AbstractDataGridHandler implements DataGridHandlerInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface::getCount()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface::getCount()
      */
     public function getCount()
     {
@@ -164,7 +164,7 @@ abstract class AbstractDataGridHandler implements DataGridHandlerInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface::setQuery()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface::setQuery()
      */
     public function setQuery($query)
     {
@@ -178,7 +178,7 @@ abstract class AbstractDataGridHandler implements DataGridHandlerInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface::getQuery()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface::getQuery()
      */
     public function getQuery()
     {
@@ -191,7 +191,7 @@ abstract class AbstractDataGridHandler implements DataGridHandlerInterface
 
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface::buildData()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface::buildData()
      */
     public function buildData()
     {
@@ -237,7 +237,7 @@ abstract class AbstractDataGridHandler implements DataGridHandlerInterface
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface::resolveOptions()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface::resolveOptions()
      */
     public function resolveOptions(array $options)
     {

@@ -7,7 +7,7 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace Thrace\DataGridBundle\Controller;
+namespace Primjeri\DataGridBundle\Controller;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -15,19 +15,19 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
 
-use Thrace\DataGridBundle\Event\QueryEvent;
+use Primjeri\DataGridBundle\Event\QueryEvent;
 
-use Thrace\DataGridBundle\Event\DataEvent;
+use Primjeri\DataGridBundle\Event\DataEvent;
 
-use Thrace\DataGridBundle\Event\RowPositionChangeEvent;
+use Primjeri\DataGridBundle\Event\RowPositionChangeEvent;
 
-use Thrace\DataGridBundle\Event\MassActionEvent;
+use Primjeri\DataGridBundle\Event\MassActionEvent;
 
-use Thrace\DataGridBundle\Event\RowEvent;
+use Primjeri\DataGridBundle\Event\RowEvent;
 
-use Thrace\DataGridBundle\DataGridEvents;
+use Primjeri\DataGridBundle\DataGridEvents;
 
-use Thrace\DataGridBundle\DataGrid\DataGridInterface;
+use Primjeri\DataGridBundle\DataGrid\DataGridInterface;
 
 /**
  * This controller handles ajax requests for managing datagrid
@@ -45,7 +45,7 @@ class DataGridController extends ContainerAware
     public function dataAction ($name)
     {
         $dataGrid = $this->getDataGrid($name);
-        $handler = $this->container->get('thrace_data_grid.handler.datagrid');
+        $handler = $this->container->get('primjeri_data_grid.handler.datagrid');
 
         $handler
             ->setDataGrid($dataGrid)
@@ -91,7 +91,7 @@ class DataGridController extends ContainerAware
             throw new \InvalidArgumentException('Parameter "action" in not valid'); 
         }
         
-        $handler = $this->container->get('thrace_data_grid.handler.datagrid');
+        $handler = $this->container->get('primjeri_data_grid.handler.datagrid');
         $handler
             ->setDataGrid($dataGrid)
             ->resolveOptions($this->getRequestParameters())
@@ -120,7 +120,7 @@ class DataGridController extends ContainerAware
             throw new \InvalidArgumentException(sprintf('Event type: %s is not valid', $oper));
         }
         
-        $eventType = 'thrace_datagrid.onRow' . ucfirst($oper);
+        $eventType = 'primjeri_datagrid.onRow' . ucfirst($oper);
         
         $event = new RowEvent($name, $this->getRequest()->get('id'));
 
@@ -138,7 +138,7 @@ class DataGridController extends ContainerAware
      * This method retrieves datagrid by name
      * 
      * @param string $name
-     * @return \Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return \Primjeri\DataGridBundle\DataGrid\DataGridInterface
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      */
@@ -148,7 +148,7 @@ class DataGridController extends ContainerAware
             throw new \RuntimeException('Request must be XmlHttpRequest');
         }
         
-        $provider = $this->container->get('thrace_data_grid.provider');
+        $provider = $this->container->get('primjeri_data_grid.provider');
         
         if (!$provider->has($name)) {
             throw new \InvalidArgumentException(sprintf('The datagrid %s is not defined', $name));

@@ -1,13 +1,13 @@
 <?php
 /*
- * This file is part of ThraceDataGridBundle
+ * This file is part of PrimjeriDataGridBundle
  *
  * (c) Nikolay Georgiev <azazen09@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace Thrace\DataGridBundle\DataGrid;
+namespace Primjeri\DataGridBundle\DataGrid;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -25,7 +25,7 @@ interface DataGridHandlerInterface
      * Provides fluent innterface
      * 
      * @param EventDispatcherInterface $dispatcher
-     * @return Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface
+     * @return Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface
      */
     public function setDispatcher(EventDispatcherInterface $dispatcher);
     
@@ -35,14 +35,14 @@ interface DataGridHandlerInterface
      * Provides fluent innterface
      * 
      * @param DataGridInterface $dataGrid
-     * @return Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface
+     * @return Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface
      */
     public function setDataGrid(DataGridInterface $dataGrid);
     
     /**
      * Gets datagrid
      * 
-     * @return Thrace\DataGridBundle\DataGrid\DataGridInterface
+     * @return Primjeri\DataGridBundle\DataGrid\DataGridInterface
      * @throws \LogicException
      */
     public function getDataGrid();
@@ -60,7 +60,7 @@ interface DataGridHandlerInterface
      * Provides fluent innterface
      * 
      * @param array $options
-     * @return Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface
+     * @return Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface
      * @throws \LogicException
      */
     public function resolveOptions(array $options);
@@ -70,7 +70,7 @@ interface DataGridHandlerInterface
      * 
      * Provides fluent innterface
      * 
-     * @return Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface
+     * @return Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface
      */
     public function buildQuery();
     
@@ -79,7 +79,7 @@ interface DataGridHandlerInterface
      * 
      * Provides fluent innterface
      * 
-     * @return Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface
+     * @return Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface
      */
     public function buildData();
     
@@ -97,7 +97,7 @@ interface DataGridHandlerInterface
      * Provides fluent innterface
      * 
      * @param Object $query
-     * @return Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface
+     * @return Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface
      */
     public function setQuery($query);
     
@@ -129,7 +129,7 @@ interface DataGridHandlerInterface
      * Provides fluent innterface
      * 
      * @param integer $count
-     * @return Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface
+     * @return Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface
      */
     public function setCount($count);
     

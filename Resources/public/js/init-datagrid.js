@@ -6,12 +6,12 @@
 * @version 1.0
 */
 jQuery(document).ready(function(){  
-    jQuery('.thrace-datagrid').each(function(){
+    jQuery('.primjeri-datagrid').each(function(){
         /** getting grid id */
         var datagridId = jQuery(this).attr('id');
         
         /** getting grid name */
-        var gridName = datagridId.replace('thrace-datagrid-', '');
+        var gridName = datagridId.replace('primjeri-datagrid-', '');
         
         /** Getting options of a grid by id */
         var options = jQuery(this).data('options'); 
@@ -59,11 +59,11 @@ jQuery(document).ready(function(){
                     isChecked = (jQuery("tr#"+rowid+".jqgrow > td > input.cbox", jQuery(this)).is(':checked') === false);
                 }
 
-                var beforeRowSelect = jQuery.Event('thrace_datagrid.beforeRowSelect');
+                var beforeRowSelect = jQuery.Event('primjeri_datagrid.beforeRowSelect');
                 beforeRowSelect.gridId =  jQuery(this).attr('id');
                 beforeRowSelect.id = rowid;
                 beforeRowSelect.isChecked = isChecked;
-                jQuery('#thrace-datagrid-container-' + gridName).next()
+                jQuery('#primjeri-datagrid-container-' + gridName).next()
                     .trigger(beforeRowSelect);
                 
                 
@@ -85,7 +85,7 @@ jQuery(document).ready(function(){
                 jQuery.each(options.dependentDataGrids, function(idx, grid){
                 	var postData = options.postData;
                 	postData.masterGridRowId = ids;
-                    var subGridId = 'thrace-datagrid-' + grid;  
+                    var subGridId = 'primjeri-datagrid-' + grid;
                     jQuery("#" + subGridId).jqGrid('setGridParam',{
                         postData: postData
                     })
@@ -97,11 +97,11 @@ jQuery(document).ready(function(){
 
             onSelectAll: function(aRowids, status){
               
-                var onSelectAll = jQuery.Event('thrace_datagrid.onSelectAll');
+                var onSelectAll = jQuery.Event('primjeri_datagrid.onSelectAll');
                 onSelectAll.gridId = jQuery(this).attr('id');
                 onSelectAll.status = status;
                 onSelectAll.ids = aRowids;
-                jQuery('#thrace-datagrid-container-' + gridName).next()
+                jQuery('#primjeri-datagrid-container-' + gridName).next()
                     .trigger(onSelectAll);
               
                 /** Applying logic for mass actions  */
@@ -113,16 +113,16 @@ jQuery(document).ready(function(){
             
             gridComplete: function(){
                 
-                var gridComplete = jQuery.Event('thrace_datagrid.gridComplete');
+                var gridComplete = jQuery.Event('primjeri_datagrid.gridComplete');
                 gridComplete.gridId =  jQuery(this).attr('id');
-                jQuery('#thrace-datagrid-container-' + gridName).next()
+                jQuery('#primjeri-datagrid-container-' + gridName).next()
                     .trigger(gridComplete);
                 
                 // Activates multi select sortable element
                 if(options.multiSelectSortableEnabled == true){                      
                    
                     var sortableElement = jQuery('#' + datagridId)
-                        .closest('.thrace-grid')
+                        .closest('.primjeri-grid')
                         .next('.multi-select-sortable');
                     
                     jQuery('#' + datagridId + ' .ui-row-ltr').draggable({
@@ -253,7 +253,7 @@ jQuery(document).ready(function(){
         );
 
         /** Binding to jstree event */
-        jQuery('body').bind('thrace.tree.event.complete', function(e){
+        jQuery('body').bind('primjeri.tree.event.complete', function(e){
             if(options.treeName == e.name){
                 jqgrid.trigger("reloadGrid");
             }
@@ -268,7 +268,7 @@ jQuery(document).ready(function(){
 
         	/** Appending html to the top panel */
             jQuery('#t_' + datagridId).append(
-                "<div class='thrace-massaction' style='float:left; margin-left:5px'>" +
+                "<div class='primjeri-massaction' style='float:left; margin-left:5px'>" +
                 "<input class='toogle-massaction' type='button'  value='"+ options.massActionLabels.toogle_select_all +"' style='height:20px;font-size:-3'/>" +
                 "</div>" +
                 "<div style='float:right; margin-right:15px'>" +
@@ -324,7 +324,7 @@ jQuery(document).ready(function(){
                         jqgrid.trigger("reloadGrid");
                         jQuery('#t_' + datagridId + ' .mass-action').attr('disabled', true);
                         jQuery('#t_' + datagridId + ' .submit-action').attr('disabled', true);
-                        var massActionEvent = jQuery.Event('thrace_datagrid.event.massAction');
+                        var massActionEvent = jQuery.Event('primjeri_datagrid.event.massAction');
                         massActionEvent.name = gridName;
                         massActionEvent.action = action;
                         massActionEvent.response = response;
@@ -351,7 +351,7 @@ jQuery(document).ready(function(){
                         function(response){
                             if(options.driver !== 'array'){
                                 jqgrid.trigger("reloadGrid");
-                                var sortableEvent = jQuery.Event('thrace_datagrid.event.sortable');
+                                var sortableEvent = jQuery.Event('primjeri_datagrid.event.sortable');
 
                                 sortableEvent.name = gridName;
                                 sortableEvent.rowId = row_id;

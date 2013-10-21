@@ -1,23 +1,23 @@
 <?php
 /*
- * This file is part of ThraceDataGridBundle
+ * This file is part of PrimjeriDataGridBundle
  *
  * (c) Nikolay Georgiev <azazen09@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace Thrace\DataGridBundle\Doctrine\ORM;
+namespace Primjeri\DataGridBundle\Doctrine\ORM;
 
-use Thrace\DataGridBundle\Event\QueryBuilderEvent;
+use Primjeri\DataGridBundle\Event\QueryBuilderEvent;
 
-use Thrace\DataGridBundle\DataGridEvents;
+use Primjeri\DataGridBundle\DataGridEvents;
 
 use Doctrine\ORM\QueryBuilder;
 
 use Doctrine\ORM\Tools\Pagination\Paginator;
 
-use Thrace\DataGridBundle\DataGrid\AbstractDataGridHandler;
+use Primjeri\DataGridBundle\DataGrid\AbstractDataGridHandler;
 
 /**
  * Implementation of AbstractDataGridHandler
@@ -29,7 +29,7 @@ class DataGridHandler extends AbstractDataGridHandler
 {      
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface::buildQuery()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface::buildQuery()
      */
     public function buildQuery() 
     {
@@ -76,7 +76,7 @@ class DataGridHandler extends AbstractDataGridHandler
     
     /**
      * (non-PHPdoc)
-     * @see \Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface::getResult()
+     * @see \Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface::getResult()
      */
     public function getResult()
     {   

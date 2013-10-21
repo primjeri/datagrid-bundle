@@ -1,19 +1,19 @@
 <?php
-namespace Thrace\DataGridBundle\Tests\Event;
+namespace Primjeri\DataGridBundle\Tests\Event;
 
-use Thrace\DataGridBundle\Event\QueryBuilderEvent;
+use Primjeri\DataGridBundle\Event\QueryBuilderEvent;
 
-use Thrace\DataGridBundle\Event\RowPositionChangeEvent;
+use Primjeri\DataGridBundle\Event\RowPositionChangeEvent;
 
-use Thrace\DataGridBundle\Event\RowEvent;
+use Primjeri\DataGridBundle\Event\RowEvent;
 
-use Thrace\DataGridBundle\Event\QueryEvent;
+use Primjeri\DataGridBundle\Event\QueryEvent;
 
-use Thrace\DataGridBundle\Event\DataEvent;
+use Primjeri\DataGridBundle\Event\DataEvent;
 
-use Thrace\DataGridBundle\Event\MassActionEvent;
+use Primjeri\DataGridBundle\Event\MassActionEvent;
 
-use Thrace\ComponentBundle\Test\Tool\BaseTestCase;
+use Primjeri\ComponentBundle\Test\Tool\BaseTestCase;
 
 class DataGridEventTest extends BaseTestCase
 {

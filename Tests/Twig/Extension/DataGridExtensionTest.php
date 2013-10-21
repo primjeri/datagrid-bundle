@@ -1,9 +1,9 @@
 <?php
-namespace Thrace\DataGridBundle\Tests\Twig\Extension;
+namespace Primjeri\DataGridBundle\Tests\Twig\Extension;
 
-use Thrace\ComponentBundle\Test\Tool\BaseTestCase;
+use Primjeri\ComponentBundle\Test\Tool\BaseTestCase;
 
-use Thrace\DataGridBundle\Twig\Extension\DataGridExtension;
+use Primjeri\DataGridBundle\Twig\Extension\DataGridExtension;
 
 use Symfony\Component\DependencyInjection\Container;
 
@@ -14,7 +14,7 @@ class DataGridExtensionTest extends  BaseTestCase
     {
         
         $dataGridMock = 
-            $this->getMock('Thrace\DataGridBundle\DataGrid\DataGridInterface');
+            $this->getMock('Primjeri\DataGridBundle\DataGrid\DataGridInterface');
         
         $templatingMock = 
             $this->getMockBuilder('Symfony\Bundle\TwigBundle\TwigEngine')
@@ -23,19 +23,19 @@ class DataGridExtensionTest extends  BaseTestCase
         $templatingMock
             ->expects($this->once())
             ->method('render')
-            ->with('ThraceDataGridBundle:DataGrid:index.html.twig', array(
+            ->with('PrimjeriDataGridBundle:DataGrid:index.html.twig', array(
                 'dataGrid' => $dataGridMock, 'translationDomain' => 'messages'
             ))
             ->will($this->returnValue('<table>test</table>'))
         ;
         
         $container = new Container();
-        $container->setParameter('thrace_data_grid.translation_domain', 'messages');
+        $container->setParameter('primjeri_data_grid.translation_domain', 'messages');
         $container->set('templating', $templatingMock);
         
         $this->assertEquals(
             '<table>test</table>', 
-            $this->getTemplate('{{ thrace_datagrid(dataGrid) }}', $container)
+            $this->getTemplate('{{ primjeri_datagrid(dataGrid) }}', $container)
                 ->render(array('dataGrid' => $dataGridMock))
         );
     }
@@ -44,9 +44,9 @@ class DataGridExtensionTest extends  BaseTestCase
     {
         
         $dataGridMock = 
-            $this->getMock('Thrace\DataGridBundle\DataGrid\DataGridInterface');
+            $this->getMock('Primjeri\DataGridBundle\DataGrid\DataGridInterface');
         
-        $providerMock = $this->getMock('Thrace\DataGridBundle\DataGrid\Provider\DataGridProviderInterface');
+        $providerMock = $this->getMock('Primjeri\DataGridBundle\DataGrid\Provider\DataGridProviderInterface');
         $providerMock
             ->expects($this->once())
             ->method('get')
@@ -61,20 +61,20 @@ class DataGridExtensionTest extends  BaseTestCase
         $templatingMock
             ->expects($this->once())
             ->method('render')
-            ->with('ThraceDataGridBundle:DataGrid:index.html.twig', array(
+            ->with('PrimjeriDataGridBundle:DataGrid:index.html.twig', array(
                 'dataGrid' => $dataGridMock, 'translationDomain' => 'messages'
             ))
             ->will($this->returnValue('<table>test</table>'))
         ;
         
         $container = new Container();
-        $container->setParameter('thrace_data_grid.translation_domain', 'messages');
+        $container->setParameter('primjeri_data_grid.translation_domain', 'messages');
         $container->set('templating', $templatingMock);
-        $container->set('thrace_data_grid.provider', $providerMock);
+        $container->set('primjeri_data_grid.provider', $providerMock);
         
         $this->assertEquals(
             '<table>test</table>', 
-            $this->getTemplate("{{ thrace_datagrid('myDataGrid') }}", $container)
+            $this->getTemplate("{{ primjeri_datagrid('myDataGrid') }}", $container)
                 ->render(array())
         );
     }

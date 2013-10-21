@@ -1,13 +1,13 @@
 <?php
 /*
- * This file is part of ThraceDataGridBundle
+ * This file is part of PrimjeriDataGridBundle
 *
 * (c) Nikolay Georgiev <azazen09@gmail.com>
 *
 * This source file is subject to the MIT license that is bundled
 * with this source code in the file LICENSE.
 */
-namespace Thrace\DataGridBundle\DataGrid;
+namespace Primjeri\DataGridBundle\DataGrid;
 
 /**
  * CustomButtom class
@@ -77,7 +77,7 @@ class CustomButton
      * Provides a fluent interface
      * 
      * @param string $name
-     * @return \Thrace\DataGridBundle\DataGrid\CustomButton
+     * @return \Primjeri\DataGridBundle\DataGrid\CustomButton
      */
     public function setName($name)
     {
@@ -101,7 +101,7 @@ class CustomButton
      * Provides a fluent interface
      * 
      * @param string $title
-     * @return \Thrace\DataGridBundle\DataGrid\CustomButton
+     * @return \Primjeri\DataGridBundle\DataGrid\CustomButton
      */
     public function setTitle($title)
     {
@@ -125,7 +125,7 @@ class CustomButton
      * Provides a fluent interface
      * 
      * @param string $caption
-     * @return \Thrace\DataGridBundle\DataGrid\CustomButton
+     * @return \Primjeri\DataGridBundle\DataGrid\CustomButton
      */
     public function setCaption($caption)
     {
@@ -149,7 +149,7 @@ class CustomButton
      * Provides a fluent interface
      * 
      * @param string $buttonIcon
-     * @return \Thrace\DataGridBundle\DataGrid\CustomButton
+     * @return \Primjeri\DataGridBundle\DataGrid\CustomButton
      */
     public function setButtonIcon($buttonIcon)
     {
@@ -174,7 +174,7 @@ class CustomButton
      * Provides a fluent interface
      * 
      * @param string $position
-     * @return \Thrace\DataGridBundle\DataGrid\CustomButton
+     * @return \Primjeri\DataGridBundle\DataGrid\CustomButton
      * @throws \InvalidArgumentException
      */
     public function setPosition($position)
@@ -202,7 +202,7 @@ class CustomButton
      * Provides a fluent interface
      * 
      * @param string $uri
-     * @return \Thrace\DataGridBundle\DataGrid\CustomButton
+     * @return \Primjeri\DataGridBundle\DataGrid\CustomButton
      */
     public function setUri($uri)
     {

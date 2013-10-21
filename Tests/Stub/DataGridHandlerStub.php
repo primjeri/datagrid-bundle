@@ -1,7 +1,7 @@
 <?php
-namespace Thrace\DataGridBundle\Tests\Stub;
+namespace Primjeri\DataGridBundle\Tests\Stub;
 
-use Thrace\DataGridBundle\DataGrid\AbstractDataGridHandler;
+use Primjeri\DataGridBundle\DataGrid\AbstractDataGridHandler;
 
 class DataGridHandlerStub extends AbstractDataGridHandler
 {

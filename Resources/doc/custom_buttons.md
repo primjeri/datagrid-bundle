@@ -16,9 +16,9 @@ use Symfony\Component\Routing\RouterInterface;
 
 use Symfony\Component\Translation\TranslatorInterface;
 
-use Thrace\DataGridBundle\DataGrid\DataGridFactoryInterface;
+use Primjeri\DataGridBundle\DataGrid\DataGridFactoryInterface;
 
-use Thrace\DataGridBundle\DataGrid\CustomButton;
+use Primjeri\DataGridBundle\DataGrid\CustomButton;
 
 class UserManagementBuilder
 {

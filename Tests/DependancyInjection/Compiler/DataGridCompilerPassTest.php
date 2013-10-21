@@ -1,9 +1,9 @@
 <?php
-namespace Thrace\DataGridBundle\Tests\DependancyInjection\Compiler;
+namespace Primjeri\DataGridBundle\Tests\DependancyInjection\Compiler;
 
-use Thrace\ComponentBundle\Test\Tool\BaseTestCase;
+use Primjeri\ComponentBundle\Test\Tool\BaseTestCase;
 
-use Thrace\DataGridBundle\DependencyInjection\Compiler\DataGridCompilerPass;
+use Primjeri\DataGridBundle\DependencyInjection\Compiler\DataGridCompilerPass;
 
 class DataGridCompilerPassTest extends BaseTestCase
 {
@@ -30,7 +30,7 @@ class DataGridCompilerPassTest extends BaseTestCase
         
         $containerBuilderMock->expects($this->once())
             ->method('findTaggedServiceIds')
-            ->with($this->equalTo('thrace_data_grid.datagrid'))
+            ->with($this->equalTo('primjeri_data_grid.datagrid'))
             ->will($this->returnValue(array('id' => array('tag1' => array('alias' => '')))));
     
         $dataGridPass = new DataGridCompilerPass();
@@ -56,13 +56,13 @@ class DataGridCompilerPassTest extends BaseTestCase
         $containerBuilderMock
             ->expects($this->once())
             ->method('findTaggedServiceIds')
-            ->with($this->equalTo('thrace_data_grid.datagrid'))
+            ->with($this->equalTo('primjeri_data_grid.datagrid'))
             ->will($this->returnValue(array('id' => array('tag1' => array('alias' => 'test_alias')))));
         
         $containerBuilderMock
             ->expects($this->once())
             ->method('getDefinition')
-            ->with($this->equalTo('thrace_data_grid.provider'))
+            ->with($this->equalTo('primjeri_data_grid.provider'))
             ->will($this->returnValue($definitionMock));
     
         $dataGridPass = new DataGridCompilerPass();

@@ -1,15 +1,15 @@
 <?php
-namespace Thrace\DataGridBundle\Tests\Controller;
+namespace Primjeri\DataGridBundle\Tests\Controller;
 
-use Thrace\DataGridBundle\DataGrid\DataGridInterface;
+use Primjeri\DataGridBundle\DataGrid\DataGridInterface;
 
 use Symfony\Component\HttpFoundation\Response;
 
 use Symfony\Component\DependencyInjection\Container;
 
-use Thrace\DataGridBundle\Controller\DataGridController;
+use Primjeri\DataGridBundle\Controller\DataGridController;
 
-use Thrace\ComponentBundle\Test\Tool\BaseTestCase;
+use Primjeri\ComponentBundle\Test\Tool\BaseTestCase;
 
 class DataGridControllerTest extends BaseTestCase
 {
@@ -28,14 +28,14 @@ class DataGridControllerTest extends BaseTestCase
         
         $container = new Container();
         $container->set('request', $mockRequest);
-        $container->set('thrace_data_grid.provider', $this->getMockProvider());
+        $container->set('primjeri_data_grid.provider', $this->getMockProvider());
         
         $controller = new DataGridController();
         $controller->setContainer($container);
 
         $result = $controller->getDataGrid('test');
         
-        $this->assertInstanceOf('Thrace\DataGridBundle\DataGrid\DataGridInterface', $result);
+        $this->assertInstanceOf('Primjeri\DataGridBundle\DataGrid\DataGridInterface', $result);
   
     }
     
@@ -74,7 +74,7 @@ class DataGridControllerTest extends BaseTestCase
             ->will($this->returnValue(true))
         ;
         
-        $mockProvider = $this->getMock('Thrace\DataGridBundle\DataGrid\Provider\DataGridProviderInterface');
+        $mockProvider = $this->getMock('Primjeri\DataGridBundle\DataGrid\Provider\DataGridProviderInterface');
         
         $mockProvider
             ->expects($this->once())
@@ -84,7 +84,7 @@ class DataGridControllerTest extends BaseTestCase
         
         $container = new Container();
         $container->set('request', $mockRequest);
-        $container->set('thrace_data_grid.provider', $mockProvider);
+        $container->set('primjeri_data_grid.provider', $mockProvider);
         
         $controller = new DataGridController();
         $controller->setContainer($container);
@@ -99,8 +99,8 @@ class DataGridControllerTest extends BaseTestCase
    
         $container = new Container();
         $container->set('request', $this->getMockRequest());
-        $container->set('thrace_data_grid.provider', $this->getMockProvider());
-        $container->set('thrace_data_grid.handler.datagrid', $this->getMockDataGridHandler());
+        $container->set('primjeri_data_grid.provider', $this->getMockProvider());
+        $container->set('primjeri_data_grid.handler.datagrid', $this->getMockDataGridHandler());
         
         
         $controller = new DataGridController();
@@ -150,8 +150,8 @@ class DataGridControllerTest extends BaseTestCase
         $container = new Container();
         $container->set('request', $this->getMockRequestForMassActionTest());
         $container->set('event_dispatcher', $this->getMockEventDispatcher());
-        $container->set('thrace_data_grid.provider', $this->getMockProvider());
-        $container->set('thrace_data_grid.handler.datagrid', $this->getMockDataGridHandlerForMassActionTest());
+        $container->set('primjeri_data_grid.provider', $this->getMockProvider());
+        $container->set('primjeri_data_grid.handler.datagrid', $this->getMockDataGridHandlerForMassActionTest());
     
         $controller = new DataGridController();
         $controller->setContainer($container);
@@ -182,7 +182,7 @@ class DataGridControllerTest extends BaseTestCase
         
         $container = new Container();
         $container->set('request', $mockRequest);
-        $container->set('thrace_data_grid.provider', $this->getMockProvider());
+        $container->set('primjeri_data_grid.provider', $this->getMockProvider());
 
         $controller = new DataGridController();
         $controller->setContainer($container);
@@ -405,7 +405,7 @@ class DataGridControllerTest extends BaseTestCase
     
     protected function getMockProvider()
     {
-        $mock = $this->getMock('Thrace\DataGridBundle\DataGrid\Provider\DataGridProviderInterface');
+        $mock = $this->getMock('Primjeri\DataGridBundle\DataGrid\Provider\DataGridProviderInterface');
         
         $mock
             ->expects($this->once())
@@ -417,14 +417,14 @@ class DataGridControllerTest extends BaseTestCase
             ->expects($this->once())
             ->method('get')
             ->with('test')
-            ->will($this->returnValue($this->getMock('Thrace\DataGridBundle\DataGrid\DataGridInterface')))
+            ->will($this->returnValue($this->getMock('Primjeri\DataGridBundle\DataGrid\DataGridInterface')))
         ;
         
         $mock
             ->expects($this->once())
             ->method('get')
             ->with('test')
-            ->will($this->returnValue($this->getMock('Thrace\DataGridBundle\DataGrid\DataGridInterface')))
+            ->will($this->returnValue($this->getMock('Primjeri\DataGridBundle\DataGrid\DataGridInterface')))
         ;
         
         
@@ -433,12 +433,12 @@ class DataGridControllerTest extends BaseTestCase
     
     protected function getMockDataGridHandler()
     {
-        $mock = $this->getMock('Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface');
+        $mock = $this->getMock('Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface');
         
         $mock
             ->expects($this->once())
             ->method('setDataGrid')
-            ->with($this->getMock('Thrace\DataGridBundle\DataGrid\DataGridInterface'))
+            ->with($this->getMock('Primjeri\DataGridBundle\DataGrid\DataGridInterface'))
             ->will($this->returnSelf())
         ;
         
@@ -472,12 +472,12 @@ class DataGridControllerTest extends BaseTestCase
     
     protected function getMockDataGridHandlerForMassActionTest()
     {
-        $mock = $this->getMock('Thrace\DataGridBundle\DataGrid\DataGridHandlerInterface');
+        $mock = $this->getMock('Primjeri\DataGridBundle\DataGrid\DataGridHandlerInterface');
         
         $mock
             ->expects($this->once())
             ->method('setDataGrid')
-            ->with($this->getMock('Thrace\DataGridBundle\DataGrid\DataGridInterface'))
+            ->with($this->getMock('Primjeri\DataGridBundle\DataGrid\DataGridInterface'))
             ->will($this->returnSelf())
         ;
         

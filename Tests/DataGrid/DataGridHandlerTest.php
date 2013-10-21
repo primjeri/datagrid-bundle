@@ -1,9 +1,9 @@
 <?php
-namespace Thrace\DataGridBundle\Tests\DataGrid;
+namespace Primjeri\DataGridBundle\Tests\DataGrid;
 
-use Thrace\DataGridBundle\Tests\Stub\DataGridHandlerStub;
+use Primjeri\DataGridBundle\Tests\Stub\DataGridHandlerStub;
 
-use Thrace\ComponentBundle\Test\Tool\BaseTestCase;
+use Primjeri\ComponentBundle\Test\Tool\BaseTestCase;
 
 use Symfony\Component\DependencyInjection\Container;
 
@@ -14,9 +14,9 @@ class DataGridHandlerTest extends BaseTestCase
     {
         $dataGridHandler = new DataGridHandlerStub();
         
-        $dataGridHandler->setDataGrid($this->getMock('Thrace\DataGridBundle\DataGrid\DataGridInterface'));
+        $dataGridHandler->setDataGrid($this->getMock('Primjeri\DataGridBundle\DataGrid\DataGridInterface'));
         
-        $this->assertInstanceOf('Thrace\DataGridBundle\DataGrid\DataGridInterface', $dataGridHandler->getDataGrid());
+        $this->assertInstanceOf('Primjeri\DataGridBundle\DataGrid\DataGridInterface', $dataGridHandler->getDataGrid());
     }
     
     public function testGetDataGridInvalidCall()
@@ -94,7 +94,7 @@ class DataGridHandlerTest extends BaseTestCase
     
     protected function getMockDataGrid()
     {
-        $mock = $this->getMock('Thrace\DataGridBundle\DataGrid\DataGridInterface');
+        $mock = $this->getMock('Primjeri\DataGridBundle\DataGrid\DataGridInterface');
         
         $mock
             ->expects($this->exactly(2))

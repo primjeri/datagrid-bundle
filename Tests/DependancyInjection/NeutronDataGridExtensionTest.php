@@ -1,33 +1,33 @@
 <?php
-namespace Thrace\DataGridBundle\Tests\DependancyInjection;
+namespace Primjeri\DataGridBundle\Tests\DependancyInjection;
 
-use Thrace\ComponentBundle\Test\Tool\BaseTestCase;
+use Primjeri\ComponentBundle\Test\Tool\BaseTestCase;
 
-use Thrace\DataGridBundle\DependencyInjection\ThraceDataGridExtension;
+use Primjeri\DataGridBundle\DependencyInjection\PrimjeriDataGridExtension;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class ThraceDataGridExtensionTest extends BaseTestCase
+class PrimjeriDataGridExtensionTest extends BaseTestCase
 {
     public function testDefault ()
     {
         $container = new ContainerBuilder();
-        $loader = new ThraceDataGridExtension();
+        $loader = new PrimjeriDataGridExtension();
         $loader->load(array(array()), $container);
         
-        $this->assertTrue($container->hasDefinition('thrace_data_grid.provider'));
+        $this->assertTrue($container->hasDefinition('primjeri_data_grid.provider'));
         
-        $this->assertTrue($container->hasDefinition('thrace_data_grid.factory.datagrid'));
+        $this->assertTrue($container->hasDefinition('primjeri_data_grid.factory.datagrid'));
         
-        $this->assertTrue($container->hasDefinition('thrace_data_grid.doctrine.orm.handler.datagrid'));
+        $this->assertTrue($container->hasDefinition('primjeri_data_grid.doctrine.orm.handler.datagrid'));
         
-        $this->assertTrue($container->hasAlias('thrace_data_grid.handler.datagrid'));  
+        $this->assertTrue($container->hasAlias('primjeri_data_grid.handler.datagrid'));
         
-        $this->assertTrue($container->hasParameter('thrace_data_grid.translation_domain'));
+        $this->assertTrue($container->hasParameter('primjeri_data_grid.translation_domain'));
                 
-        $this->assertTrue($container->hasDefinition('thrace_data_grid.twig.extension.datagrid'));
+        $this->assertTrue($container->hasDefinition('primjeri_data_grid.twig.extension.datagrid'));
         
-        $this->assertTrue($container->getDefinition('thrace_data_grid.twig.extension.datagrid')
+        $this->assertTrue($container->getDefinition('primjeri_data_grid.twig.extension.datagrid')
              ->hasTag('twig.extension')
         );
     

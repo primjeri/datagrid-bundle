@@ -1,13 +1,13 @@
 <?php
 /*
- * This file is part of ThraceDataGridBundle
+ * This file is part of PrimjeriDataGridBundle
  *
  * (c) Nikolay Georgiev <azazen09@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace Thrace\DataGridBundle\DependencyInjection;
+namespace Primjeri\DataGridBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 
@@ -29,11 +29,11 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('thrace_data_grid');
+        $rootNode = $treeBuilder->root('primjeri_data_grid');
 
         $rootNode
             ->children()
-                ->scalarNode('translation_domain')->defaultValue('ThraceDataGridBundle')->cannotBeEmpty()->end()
+                ->scalarNode('translation_domain')->defaultValue('PrimjeriDataGridBundle')->cannotBeEmpty()->end()
             ->end()
         ;
 

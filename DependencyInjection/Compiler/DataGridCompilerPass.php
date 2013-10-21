@@ -1,13 +1,13 @@
 <?php
 /*
- * This file is part of ThraceDataGridBundle
+ * This file is part of PrimjeriDataGridBundle
  *
  * (c) Nikolay Georgiev <azazen09@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace Thrace\DataGridBundle\DependencyInjection\Compiler;
+namespace Primjeri\DataGridBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
@@ -29,19 +29,19 @@ class DataGridCompilerPass implements CompilerPassInterface
      */
     public function process (ContainerBuilder $container)
     {
-        if (!$container->hasDefinition('thrace_data_grid.provider')) {
+        if (!$container->hasDefinition('primjeri_data_grid.provider')) {
             return;
         }
                 
-        $definition = $container->getDefinition('thrace_data_grid.provider');
+        $definition = $container->getDefinition('primjeri_data_grid.provider');
         
         $dataGrids = array();
         
-        foreach ($container->findTaggedServiceIds('thrace_data_grid.datagrid') as $id => $tags) {
+        foreach ($container->findTaggedServiceIds('primjeri_data_grid.datagrid') as $id => $tags) {
             foreach ($tags as $attributes) {
                 if (empty($attributes['alias'])) {
                     throw new \InvalidArgumentException(
-                        sprintf('The alias is not defined in the "thrace_data_grid.datagrid" tag for the service "%s"', $id)
+                        sprintf('The alias is not defined in the "primjeri_data_grid.datagrid" tag for the service "%s"', $id)
                     );
                 }
                 

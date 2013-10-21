@@ -1,7 +1,7 @@
-Using ThraceDataGridBundle
+Using PrimjeriDataGridBundle
 ===========================
 <a name="top"></a>
-ThraceDataGridBundle adds supports for building RIA datagrids with jqgrid without writing a single line of javascript code!
+PrimjeriDataGridBundle adds supports for building RIA datagrids with jqgrid without writing a single line of javascript code!
 
 **Basic Docs**
 
@@ -27,13 +27,13 @@ ThraceDataGridBundle adds supports for building RIA datagrids with jqgrid withou
 
 ### Step 1) Get the bundle
 
-First, grab the  ThraceDataGridBundle using composer (symfony 2.1 pattern)
+First, grab the  PrimjeriDataGridBundle using composer (symfony 2.1 pattern)
 
 Add on composer.json (see http://getcomposer.org/)
 
     "require" :  {
         // ...
-        "thrace/datagrid-bundle":"dev-master",
+        "primjeri/datagrid-bundle":"dev-master",
     }
 
 ### Step 2) Register the bundle
@@ -48,7 +48,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Thrace\DataGridBundle\ThraceDataGridBundle(),
+        new Primjeri\DataGridBundle\PrimjeriDataGridBundle(),
     );
     // ...
 }
@@ -58,8 +58,8 @@ public function registerBundles()
 ``` yaml
 # app/config/routing.yaml
 
-thrace_data_grid:
-    resource: "@ThraceDataGridBundle/Resources/config/routing.xml"
+primjeri_data_grid:
+    resource: "@PrimjeriDataGridBundle/Resources/config/routing.xml"
     prefix:   / 
 ```
 
@@ -75,8 +75,8 @@ If you skip this step, these defaults will be used.
 
 ```yaml
 # app/config/config.yml
-thrace_data_grid:
-	translation_domain: ThraceDataGridBundle
+primjeri_data_grid:
+	translation_domain: PrimjeriDataGridBundle
 ```
 
 **Note:** If you wish to use default texts provided in this bundle, you have to make sure you have translator enabled in your config.
@@ -308,7 +308,7 @@ use Symfony\Component\Routing\RouterInterface;
 
 use Symfony\Component\Translation\TranslatorInterface;
 
-use Thrace\DataGridBundle\DataGrid\DataGridFactoryInterface;
+use Primjeri\DataGridBundle\DataGrid\DataGridFactoryInterface;
 
 class UserManagementBuilder
 {
@@ -412,16 +412,16 @@ All datagrids are created via factory service.
 
 ``` xml
 <service id="app.datagrid.builder.user_management" class="AppBundle\DataGrid\UserManagementBuilder" >
-	<argument type="service" id="thrace_data_grid.factory.datagrid" />
+	<argument type="service" id="primjeri_data_grid.factory.datagrid" />
 	<argument type="service" id="translator" />
 	<argument type="service" id="router" />
 	<argument type="service" id="doctrine.orm.entity_manager" />
 </service>
 
-<service id="app.datagrid.user_management" class="Thrace\DataGridBundle\DataGrid\DataGrid"
+<service id="app.datagrid.user_management" class="Primjeri\DataGridBundle\DataGrid\DataGrid"
 	factory-service="app.datagrid.builder.user_management"
 	factory-method="build">
-	<tag name="thrace_data_grid.datagrid" alias="user_management" />
+	<tag name="primjeri_data_grid.datagrid" alias="user_management" />
 </service>
 ```
 
@@ -431,7 +431,7 @@ All datagrids are created via factory service.
 
 ## Retrieving datagrid by alias key
 
-In order to render the datagrid you will have to get it from the service container. You are able to do this using datagrid provider service *thrace_data_grid.provider* .
+In order to render the datagrid you will have to get it from the service container. You are able to do this using datagrid provider service *primjeri_data_grid.provider* .
 
 The following example demonstrates how to get a datagrid in a controller method and pass it to the view:
 
@@ -446,8 +446,8 @@ class DefaultController extends Controller
 
     public function indexAction()
     {    
-   	    /** @var \Thrace\DataGridBundle\DataGrid\DataGridInterface */
-        $userManagementDataGrid = $this->container->get('thrace_data_grid.provider')->get('user_management');
+   	    /** @var \Primjeri\DataGridBundle\DataGrid\DataGridInterface */
+        $userManagementDataGrid = $this->container->get('primjeri_data_grid.provider')->get('user_management');
         
     	return $this->render('AppBundle:Backend\Default:index.html.twig',array(
     	    'userManagementDataGrid' => $userManagementDataGrid,
@@ -491,7 +491,7 @@ See [installation](#installation)
         'jquery/i18n/jquery-ui-i18n.js'
         'jquery/plugins/jqgrid/js/i18n/grid.locale-en.js'
         'jquery/plugins/jqgrid/js/jquery.jqGrid.src.js'
-        'bundles/thracedatagrid/js/init-datagrid.js'
+        'bundles/primjeridatagrid/js/init-datagrid.js'
     %}
 		<script src="{{ asset_url }}"></script>
 	{% endjavascripts %}
@@ -501,7 +501,7 @@ See [installation](#installation)
 
 ### Step 3) Install bundle assets running the following command:
 
-**Note:** You have to include *'bundles/thracedatagrid/js/init-datagrid.js'*. This script initiates all datagrids in the template.
+**Note:** You have to include *'bundles/primjeridatagrid/js/init-datagrid.js'*. This script initiates all datagrids in the template.
 
 ``` bash
 $ php app/console assets:install --symlink web
@@ -510,18 +510,18 @@ $ php app/console assets:install --symlink web
 **Note:** See path to javascript files. It has to point to the files previously downloaded to your web root. 
 See [installation](#installation)
 
-### Step 4) Render the datagrid with *thrace_datagrid* twig extension.
+### Step 4) Render the datagrid with *primjeri_datagrid* twig extension.
 
 Parameter *userManagementDataGrid* must be an instance of *DataGridInterface*
 
 ``` jinja
-<div>{{ thrace_datagrid(userManagementDataGrid) }}</div>
+<div>{{ primjeri_datagrid(userManagementDataGrid) }}</div>
 ```
 
 or just provide datagrid alias. This way is more flexible because there is no need to get the datagrid from the provider.
 
 ``` jinja
-<div>{{ thrace_datagrid('user_management') }}</div>
+<div>{{ primjeri_datagrid('user_management') }}</div>
 ```
 
 <a name="jqgrid-query-builder"></a>

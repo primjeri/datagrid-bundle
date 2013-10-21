@@ -1,17 +1,17 @@
 <?php
 /*
- * This file is part of ThraceDataGridBundle
+ * This file is part of PrimjeriDataGridBundle
  *
  * (c) Nikolay Georgiev <azazen09@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace Thrace\DataGridBundle\Twig\Extension;
+namespace Primjeri\DataGridBundle\Twig\Extension;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use Thrace\DataGridBundle\DataGrid\DataGridInterface;
+use Primjeri\DataGridBundle\DataGrid\DataGridInterface;
 
 /**
  * Twig Extension for rendering initial content of jqgrid
@@ -43,7 +43,7 @@ class DataGridExtension extends \Twig_Extension
     public function getFunctions ()
     {
         return array(
-            'thrace_datagrid' => new \Twig_Function_Method($this, 'dataGrid', 
+            'primjeri_datagrid' => new \Twig_Function_Method($this, 'dataGrid',
                  array('is_safe' => array('html'))
             )
         );
@@ -56,7 +56,7 @@ class DataGridExtension extends \Twig_Extension
      */
     public function getName ()
     {
-        return 'thrace_datagrid';
+        return 'primjeri_datagrid';
     }
 
     /**
@@ -68,15 +68,15 @@ class DataGridExtension extends \Twig_Extension
     public function dataGrid ($dataGrid)
     {   
         if (!$dataGrid instanceof DataGridInterface){
-            $dataGrid = $this->container->get('thrace_data_grid.provider')->get($dataGrid);
+            $dataGrid = $this->container->get('primjeri_data_grid.provider')->get($dataGrid);
         }
 
         return $this->container->get('templating')->render(
-            'ThraceDataGridBundle:DataGrid:index.html.twig', 
+            'PrimjeriDataGridBundle:DataGrid:index.html.twig',
             array(
                 'dataGrid' => $dataGrid, 
                 'translationDomain' => $this->container
-                    ->getParameter('thrace_data_grid.translation_domain')
+                    ->getParameter('primjeri_data_grid.translation_domain')
             )
         );
     }

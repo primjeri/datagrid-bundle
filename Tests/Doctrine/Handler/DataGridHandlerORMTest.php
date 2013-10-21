@@ -1,23 +1,23 @@
 <?php
-namespace Thrace\DataGridBundle\Tests\Doctrine\Handler;
+namespace Primjeri\DataGridBundle\Tests\Doctrine\Handler;
 
-use Thrace\DataGridBundle\Tests\Fixture\Entity\GridDependent;
+use Primjeri\DataGridBundle\Tests\Fixture\Entity\GridDependent;
 
-use Thrace\DataGridBundle\Tests\Fixture\Entity\GridMaster;
+use Primjeri\DataGridBundle\Tests\Fixture\Entity\GridMaster;
 
-use Thrace\DataGridBundle\Doctrine\ORM\DataGridHandler;
+use Primjeri\DataGridBundle\Doctrine\ORM\DataGridHandler;
 
 use Symfony\Component\DependencyInjection\Container;
 
 use Doctrine\ORM\QueryBuilder;
 
-use Thrace\ComponentBundle\Test\Tool\BaseTestCaseORM;
+use Primjeri\ComponentBundle\Test\Tool\BaseTestCaseORM;
 
 class DataGridHandlerORMTest extends BaseTestCaseORM
 {
-    const GRID_MASTER = 'Thrace\DataGridBundle\Tests\Fixture\Entity\GridMaster';
+    const GRID_MASTER = 'Primjeri\DataGridBundle\Tests\Fixture\Entity\GridMaster';
     
-    const GRID_DEPENDANT = 'Thrace\DataGridBundle\Tests\Fixture\Entity\GridDependent';
+    const GRID_DEPENDANT = 'Primjeri\DataGridBundle\Tests\Fixture\Entity\GridDependent';
     
     protected function setUp()
     {
@@ -445,7 +445,7 @@ class DataGridHandlerORMTest extends BaseTestCaseORM
         $qb =  $this->em->createQueryBuilder();
         $qb
             ->select(array('m.id, m.name, m.rank, COUNT(s.id) as slaveCount, m'))
-            ->from('\Thrace\DataGridBundle\Tests\Fixture\Entity\GridMaster', 'm')
+            ->from('\Primjeri\DataGridBundle\Tests\Fixture\Entity\GridMaster', 'm')
             ->leftJoin('m.grids', 's')
             ->groupBy('m.id')
         ;
@@ -458,7 +458,7 @@ class DataGridHandlerORMTest extends BaseTestCaseORM
         $qb =  $this->em->createQueryBuilder();
         $qb
             ->select(array('s.id, s.name, s'))
-            ->from('\Thrace\DataGridBundle\Tests\Fixture\Entity\GridDependent', 's')
+            ->from('\Primjeri\DataGridBundle\Tests\Fixture\Entity\GridDependent', 's')
             ->join('s.master', 'm')
             ->where('m.id = :masterGridRowId')
         ;
@@ -504,7 +504,7 @@ class DataGridHandlerORMTest extends BaseTestCaseORM
     
     protected function getMockDataGrid(QueryBuilder $qb, $dependent = false, $sortable = false)
     {
-        $mock = $this->getMock('Thrace\DataGridBundle\DataGrid\DataGridInterface');
+        $mock = $this->getMock('Primjeri\DataGridBundle\DataGrid\DataGridInterface');
         
         $mock
             ->expects($this->any())
@@ -545,7 +545,7 @@ class DataGridHandlerORMTest extends BaseTestCaseORM
     
     protected function getMockDataGridForInvalidTest(QueryBuilder $qb = null)
     {
-        $mock = $this->getMock('Thrace\DataGridBundle\DataGrid\DataGridInterface');
+        $mock = $this->getMock('Primjeri\DataGridBundle\DataGrid\DataGridInterface');
         
         $mock
             ->expects($this->any())
