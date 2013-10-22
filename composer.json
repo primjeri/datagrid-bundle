@@ -8,7 +8,15 @@
         {
             "name":     "Nikolay Georgiev",
             "email": "symfonist@gmail.com"
+        },
+        {
+            "name": "primjeri",
+            "email": "info@primjeri.com",
+            "role": "Contributor"
         }
+    ],
+    "repositories": [
+        { "type": "vcs", "url": "https://github.com/primjeri/datagrid-bundle.git" }
     ],
     "extra": {
         "branch-alias": {

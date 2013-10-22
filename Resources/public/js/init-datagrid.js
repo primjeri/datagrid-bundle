@@ -181,9 +181,19 @@ jQuery(document).ready(function(){
             forceFit: options.forceFit,
             shrinkToFit: options.shrinkToFit,
             scroll:options.sortableEnabled,
-            gridview: true
+            gridview: true,
+            toppager: options.toppager
         });
-        
+
+        jqgrid.jqGrid('navButtonAdd', pager, {
+            caption: "",
+            buttonicon: "ui-icon-calculator",
+            title: "Choose columns",
+            onClickButton: function () {
+                jqgrid.jqGrid('columnChooser');
+            }
+        });
+
         // Loading local data
         if(options.driver === 'array'){
             jQuery.each(options.data, function(k,v){
@@ -199,7 +209,8 @@ jQuery(document).ready(function(){
                 search:options.searchBtnEnabled, 
                 edit:options.editBtnEnabled,
                 add:options.addBtnEnabled,
-                del:options.deleteBtnEnabled,               
+                del:options.deleteBtnEnabled,
+                cloneToTop: true
             },
             {
             	width: 600, // fix twitter-bootstrap

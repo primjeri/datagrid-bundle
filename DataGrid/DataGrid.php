@@ -217,7 +217,12 @@ class DataGrid implements DataGridInterface
      * @var string
      */
     protected $multiSelectSortableColumn;
-    
+
+    /**
+     * @var boolean
+     */
+    protected $toppager = false;
+
     /**
      * @var array
      */
@@ -1048,7 +1053,27 @@ class DataGrid implements DataGridInterface
     {
         return $this->multiSelectSortableColumn;
     }
-    
+
+    /**
+     * (non-PHPdoc)
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getHideGrid()
+     */
+    public function getTopPager()
+    {
+        return $this->toppager;
+    }
+
+    /**
+     * (non-PHPdoc)
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setHideGrid()
+     */
+    public function setTopPager($bool)
+    {
+        $this->toppager = (bool) $bool;
+
+        return $this;
+    }
+
     /**
      * (non-PHPdoc)
      * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::hasCustomButton()
@@ -1189,6 +1214,7 @@ class DataGrid implements DataGridInterface
         $data['treeName'] = $this->getTreeName();
         $data['multiSelectSortableEnabled'] = $this->isMultiSelectSortableEnabled();
         $data['multiSelectSortableColumn'] = $this->getMultiSelectSortableColumn();
+        $data['toppager'] = $this->getTopPager();
         $data['customButtons'] = $this->getCustomButtonsAsOptions();
         $data['postData'] = $this->getPostData();
       
