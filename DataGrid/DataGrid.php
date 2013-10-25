@@ -224,6 +224,11 @@ class DataGrid implements DataGridInterface
     protected $toppager = false;
 
     /**
+     * @var boolean
+     */
+    protected $filterToolbar = false;
+
+    /**
      * @var array
      */
     protected $customButtons = array();
@@ -1076,6 +1081,26 @@ class DataGrid implements DataGridInterface
 
     /**
      * (non-PHPdoc)
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getHideGrid()
+     */
+    public function getFilterToolbar()
+    {
+        return $this->filterToolbar;
+    }
+
+    /**
+     * (non-PHPdoc)
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setHideGrid()
+     */
+    public function setFilterToolbar($bool)
+    {
+        $this->filterToolbar = (bool) $bool;
+
+        return $this;
+    }
+
+    /**
+     * (non-PHPdoc)
      * @see \Primjeri\DataGridBundle\DataGrid\DataGridInterface::hasCustomButton()
      */
     public function hasCustomButton($name)
@@ -1215,6 +1240,7 @@ class DataGrid implements DataGridInterface
         $data['multiSelectSortableEnabled'] = $this->isMultiSelectSortableEnabled();
         $data['multiSelectSortableColumn'] = $this->getMultiSelectSortableColumn();
         $data['toppager'] = $this->getTopPager();
+        $data['filterToolbar'] = $this->getFilterToolbar();
         $data['customButtons'] = $this->getCustomButtonsAsOptions();
         $data['postData'] = $this->getPostData();
       

@@ -194,6 +194,10 @@ jQuery(document).ready(function(){
             }
         });
 
+        if(options.filterToolbar === true){
+            jqgrid.jqGrid('filterToolbar', { stringResult: true, searchOnEnter: false, defaultSearch: "cn", groupOp: "AND"  });
+        }
+
         // Loading local data
         if(options.driver === 'array'){
             jQuery.each(options.data, function(k,v){
