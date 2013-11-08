@@ -25,9 +25,6 @@ phpunit
 
 **Warning:** Not all jqgrid options are supported. DataGrid can be rendered only in Twig environment.
 
-[![Build Status](https://travis-ci.org/primjeri-project/datagrid-bundle.png?branch=master)](https://travis-ci.org/primjeri-project/datagrid-bundle)
-
-
 Documentation
 -------------
 

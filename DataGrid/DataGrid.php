@@ -21,6 +21,11 @@ class DataGrid implements DataGridInterface
     /**
      * @var string
      */
+    protected $editUrl;
+
+    /**
+     * @var string
+     */
     protected $name;
     
     /**
@@ -246,6 +251,26 @@ class DataGrid implements DataGridInterface
     public function __construct($name)
     {
         $this->name = (string) $name;
+    }
+
+    /**
+     * (non-PHPdoc)
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::getName()
+     */
+    public function getEditUrl()
+    {
+        return $this->editUrl;
+    }
+
+    /**
+     * (non-PHPdoc)
+     * @see Primjeri\DataGridBundle\DataGrid.DataGridInterface::setName()
+     */
+    public function setEditUrl($editUrl)
+    {
+        $this->editUrl = (string) $editUrl;
+
+        return $this;
     }
 
     /**
@@ -1201,6 +1226,7 @@ class DataGrid implements DataGridInterface
     {
         $this->normalizeOptions();
         
+        $data['edit_url'] = $this->getEditUrl();
         $data['name'] = $this->getName();
         $data['driver'] = $this->getDriver();
         $data['data'] = $this->getData();

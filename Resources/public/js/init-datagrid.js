@@ -1,21 +1,48 @@
 /**
-* Initialization of jqgrid
-* 
-* 
-* @author Nikolay Georgiev
-* @version 1.0
-*/
-jQuery(document).ready(function(){  
+ * Initialization of jqgrid
+ *
+ *
+ * @author Nikolay Georgiev
+ * @version 1.0
+ */
+
+var initDateEdit = function (elem) {
+    setTimeout(function () {
+        $(elem).datepicker({
+            dateFormat: 'dd-M-yy',
+            autoSize: true,
+            changeYear: true,
+            changeMonth: true,
+            showButtonPanel: true,
+            showWeek: true
+        });
+    }, 100);
+};
+
+var initDateSearch = function (elem) {
+    setTimeout(function () {
+        $(elem).datepicker({
+            dateFormat: 'dd-M-yy',
+            autoSize: true,
+            changeYear: true,
+            changeMonth: true,
+            showWeek: true,
+            showButtonPanel: true
+        });
+    }, 100);
+};
+
+jQuery(document).ready(function(){
     jQuery('.primjeri-datagrid').each(function(){
         /** getting grid id */
         var datagridId = jQuery(this).attr('id');
-        
+
         /** getting grid name */
         var gridName = datagridId.replace('primjeri-datagrid-', '');
-        
+
         /** Getting options of a grid by id */
-        var options = jQuery(this).data('options'); 
-        
+        var options = jQuery(this).data('options');
+
         var evaluateFn = function(options){
             jQuery.each(options, function(k,v){
                 if(typeof(v) == 'string' && isNaN(v)){
@@ -27,32 +54,32 @@ jQuery(document).ready(function(){
                 }
             });
         };
-        
-        evaluateFn(options); 
-        
+
+        evaluateFn(options);
+
         if(options.postData == null){
-        	options.postData = {};
+            options.postData = {};
         }
-        
+
         var datatype = 'json';
-        
+
         if(options.driver === 'array'){
             datatype = 'local';
         }
-        
-        var pager = null; 
-        var selectAll = false; 
+
+        var pager = null;
+        var selectAll = false;
         var selectedRow = null;
-        
+
         if(options.pagerEnabled == true){
             pager = '#' + datagridId + '-pager';
         }
-        
+
         var jqgrid = jQuery('#' + datagridId).jqGrid({
             beforeSelectRow: function (rowid, e) {
-                
+
                 var isChecked = false;
-                
+
                 if(jQuery(e.target).is(':input')){
                     isChecked = jQuery(e.target).is(':checked');
                 } else {
@@ -65,66 +92,90 @@ jQuery(document).ready(function(){
                 beforeRowSelect.isChecked = isChecked;
                 jQuery('#primjeri-datagrid-container-' + gridName).next()
                     .trigger(beforeRowSelect);
-                
-                
+
+
                 return true;
-                
+
             },
-            onSelectRow: function(aRowids, status){ 
-                         
+            onSelectRow: function(aRowids, status){
+
                 /** Applying logic for mass actions  */
                 selectAll = false;
-                
+
                 selectedRow = jQuery(this).getRowData(aRowids);
-                
+
                 toggleMassActionBtns(jQuery(this), datagridId);
 
-                /** Connecting master with dependent grids. */	
+                /** Connecting master with dependent grids. */
                 var ids = aRowids;
 
                 jQuery.each(options.dependentDataGrids, function(idx, grid){
-                	var postData = options.postData;
-                	postData.masterGridRowId = ids;
+                    var postData = options.postData;
+                    postData.masterGridRowId = ids;
                     var subGridId = 'primjeri-datagrid-' + grid;
                     jQuery("#" + subGridId).jqGrid('setGridParam',{
                         postData: postData
                     })
-                    .trigger('reloadGrid');
+                        .trigger('reloadGrid');
                 });
-            
+
                 return true;
             },
 
+//            ondblClickRow: function(rowid){
+////                var row_id = jqgrid.getGridParam('selrow');
+////                jqgrid.editRow(row_id, true);
+//                jqgrid.jqGrid('editGridRow',
+//                    rowid,
+//                    {
+//                        recreateForm:true,
+//                        closeAfterEdit:true,
+//                        closeOnEscape:true,
+//                        reloadAfterSubmit:false
+//                    }
+//                );
+//            },
+
+            ondblClickRow: function (rowId, iRow, iCol, e) {
+                //alert(options.row_action_url); //_primjeri-datagrid/row-action/client_management
+                $('#main_modal').foundation('reveal', 'open', {
+                    url: options.edit_url+rowId+'/edit'
+                });
+            },
+
             onSelectAll: function(aRowids, status){
-              
+
+                var selectedRows = jqgrid.jqGrid('getGridParam','selarrrow');
+                alert(selectedRows);
+
                 var onSelectAll = jQuery.Event('primjeri_datagrid.onSelectAll');
                 onSelectAll.gridId = jQuery(this).attr('id');
                 onSelectAll.status = status;
                 onSelectAll.ids = aRowids;
                 jQuery('#primjeri-datagrid-container-' + gridName).next()
                     .trigger(onSelectAll);
-              
+
                 /** Applying logic for mass actions  */
                 selectAll = false;
                 toggleMassActionBtns(jQuery(this), datagridId);
-                
+
                 return true;
             },
-            
+
             gridComplete: function(){
-                
+
                 var gridComplete = jQuery.Event('primjeri_datagrid.gridComplete');
                 gridComplete.gridId =  jQuery(this).attr('id');
                 jQuery('#primjeri-datagrid-container-' + gridName).next()
                     .trigger(gridComplete);
-                
+
                 // Activates multi select sortable element
-                if(options.multiSelectSortableEnabled == true){                      
-                   
+                if(options.multiSelectSortableEnabled == true){
+
                     var sortableElement = jQuery('#' + datagridId)
                         .closest('.primjeri-grid')
                         .next('.multi-select-sortable');
-                    
+
                     jQuery('#' + datagridId + ' .ui-row-ltr').draggable({
                         revert:     false,
                         stack: '#' + sortableElement.attr('id'),
@@ -151,10 +202,10 @@ jQuery(document).ready(function(){
                     });
 
                     jQuery('#' + sortableElement.attr('id')).fadeIn();
-                
+
                 }
             },
-            
+
             url: options.data_url,
             editurl: options.row_action_url,
             datatype: datatype,
@@ -180,22 +231,15 @@ jQuery(document).ready(function(){
             toolbar: [options.massActionsEnabled, "top"],
             forceFit: options.forceFit,
             shrinkToFit: options.shrinkToFit,
-            scroll:options.sortableEnabled,
+            scroll:true,
             gridview: true,
             toppager: options.toppager
         });
 
-        jqgrid.jqGrid('navButtonAdd', pager, {
-            caption: "",
-            buttonicon: "ui-icon-calculator",
-            title: "Choose columns",
-            onClickButton: function () {
-                jqgrid.jqGrid('columnChooser');
-            }
-        });
+        jqgrid.jqGrid('setGridWidth', '1400');
 
         if(options.filterToolbar === true){
-            jqgrid.jqGrid('filterToolbar', { stringResult: true, searchOnEnter: false, defaultSearch: "cn", groupOp: "AND"  });
+            jqgrid.jqGrid('filterToolbar', { stringResult: true, searchOnEnter: false, defaultSearch: "cn", groupOp: "AND" });
         }
 
         // Loading local data
@@ -204,99 +248,113 @@ jQuery(document).ready(function(){
                 jqgrid.jqGrid('addRowData',v.id, v);
             });
         }
-        
+
+        jqgrid.jqGrid('setFrozenColumns');
 
         /** initializing pager */
-        var navGrid = 
-            jqgrid.jqGrid('navGrid', pager, 
-            { 
-                search:options.searchBtnEnabled, 
-                edit:options.editBtnEnabled,
-                add:options.addBtnEnabled,
-                del:options.deleteBtnEnabled,
-                cloneToTop: true
-            },
-            {
-            	width: 600, // fix twitter-bootstrap
-                afterSubmit : function(response, postdata){
-                    if(response.status != 200){
-                        alert('Server error: ' + response.status);
-                        return false;
-                    }
-
-                    serverResponse = jQuery.parseJSON(response.responseText);
-                    success = serverResponse.success;
-                    message = buildErrorMessages(serverResponse.errors);
-                    id = serverResponse.id;
-
-                    if(options.driver === 'array' && success){
-                        jqgrid.jqGrid('setRowData',id ,serverResponse.data);
-                    }
-
-                    return [success,message,id];
+        var navGrid =
+            jqgrid.jqGrid('navGrid', pager,
+                {
+                    search:options.searchBtnEnabled,
+                    edit:options.editBtnEnabled,
+                    add:options.addBtnEnabled,
+                    del:options.deleteBtnEnabled,
+                    cloneToTop: true
                 },
-                
-            },
-            {
-            	width: 600, // fix twitter-bootstrap
-            	afterSubmit : function(response, postdata){
-            		
-            		if(response.status != 200){
+                {
+                    width: 600, // fix twitter-bootstrap
+                    afterSubmit : function(response, postdata){
+                        if(response.status != 200){
                             alert('Server error: ' + response.status);
                             return false;
-            		}
-            		
-            		serverResponse = jQuery.parseJSON(response.responseText);
-            		success = serverResponse.success;
-            		message = buildErrorMessages(serverResponse.errors);
-            		id = serverResponse.id;
-            		
-            		if(options.driver === 'array' && success){
+                        }
+
+                        serverResponse = jQuery.parseJSON(response.responseText);
+                        success = serverResponse.success;
+                        message = buildErrorMessages(serverResponse.errors);
+                        id = serverResponse.id;
+
+                        if(options.driver === 'array' && success){
+                            jqgrid.jqGrid('setRowData',id ,serverResponse.data);
+                        }
+
+                        return [success,message,id];
+                    },
+
+                },
+                {
+                    width: 600, // fix twitter-bootstrap
+                    afterSubmit : function(response, postdata){
+
+                        if(response.status != 200){
+                            alert('Server error: ' + response.status);
+                            return false;
+                        }
+
+                        serverResponse = jQuery.parseJSON(response.responseText);
+                        success = serverResponse.success;
+                        message = buildErrorMessages(serverResponse.errors);
+                        id = serverResponse.id;
+
+                        if(options.driver === 'array' && success){
                             jqgrid.jqGrid('addRowData',id ,serverResponse.data);
                         }
-            		
-            		return [success,message,id];
-            	},
-            	
-            },
-            {},
-            {
-                sopt:options.searchOptions, 
-                multipleSearch:true, 
-                multipleGroup:false
-            }
-        );
+
+                        return [success,message,id];
+                    },
+
+                },
+                {},
+                {
+                    sopt:options.searchOptions,
+                    multipleSearch:true,
+                    multipleGroup:false
+                }
+            );
 
         /** Binding to jstree event */
         jQuery('body').bind('primjeri.tree.event.complete', function(e){
             if(options.treeName == e.name){
                 jqgrid.trigger("reloadGrid");
             }
-        	
+
         });
-    
+
+        navGrid.navButtonAdd(pager,{
+            caption: "",
+            buttonicon: "ui-icon-calculator",
+            title: "Kolone",
+            onClickButton: function () {
+                jqgrid.jqGrid('columnChooser');
+            }
+        });
+
+
+        jqgrid.jqGrid('navGrid','#presize',{edit:false,add:false,del:false});
+        //jQuery("#resize").jqGrid('gridResize',{minWidth:350,maxWidth:800,minHeight:80, maxHeight:350});
+
         // custom buttons
         addCustomButtons(jqgrid, navGrid, pager, options);
 
         /** Initializing mass actions */
         if(options.massActionsEnabled){
 
-        	/** Appending html to the top panel */
+            /** Appending html to the top panel */
             jQuery('#t_' + datagridId).append(
                 "<div class='primjeri-massaction' style='float:left; margin-left:5px'>" +
-                "<input class='toogle-massaction' type='button'  value='"+ options.massActionLabels.toogle_select_all +"' style='height:20px;font-size:-3'/>" +
-                "</div>" +
-                "<div style='float:right; margin-right:15px'>" +
-                "<span>"+ options.massActionLabels.with_selected +": </span> " +
-                "<select class='mass-action' disabled='true' style='padding:0px;height:20px;margin-bottom:0px'>" +
-                buildSelectOptions(options.massActions, options.massActionLabels.select_action) +
-                "</select>" +
-                "<input class='submit-action' type='button' disabled='true' value='Submit' style='height:20px;line-height:10px;margin-left:5px;font-size:-3'/>" +
-                "</div>"
+                    "<input class='toogle-massaction' type='button'  value='"+ options.massActionLabels.toogle_select_all +"' style='height:20px;font-size:-3'/>" +
+                    "</div>" +
+                    "<div style='float:right; margin-right:15px'>" +
+                    "<span>"+ options.massActionLabels.with_selected +": </span> " +
+                    "<select class='mass-action' disabled='true' style='padding:0px;height:20px;margin-bottom:0px'>" +
+                    buildSelectOptions(options.massActions, options.massActionLabels.select_action) +
+                    "</select>" +
+                    "<input class='submit-action' type='button' disabled='true' value='Submit' style='height:20px;line-height:10px;margin-left:5px;font-size:-3'/>" +
+                    "</div>"
             );
 
             /** Assigning click event to deselect-all button */
-            jQuery('#t_' + datagridId + ' .toogle-massaction').click(function(){ 
+            jQuery('#t_' + datagridId + ' .toogle-massaction').click(function(){
                 jQuery('#cb_' + datagridId).trigger('click');
                 selectAll = jQuery('#cb_' + datagridId).is(':checked');
                 return false;
@@ -312,39 +370,39 @@ jQuery(document).ready(function(){
             });
 
             /** Disable select and deselect button when search button is clicked */
-            jQuery('#search_' + datagridId).click(function(){ 
+            jQuery('#search_' + datagridId).click(function(){
                 jQuery('#cb_' + datagridId).attr("checked", false);
                 jQuery('#cb_' + datagridId).trigger('click');
                 jQuery('#cb_' + datagridId).attr("checked", false);
                 selectAll = false;
-			
+
             });
 
             /** Executes selected mass action */
-            jQuery('#t_' + datagridId + ' .submit-action').click( function() { 
+            jQuery('#t_' + datagridId + ' .submit-action').click( function() {
                 var action = jQuery(this).prev().val();
                 var ids = jqgrid.jqGrid('getGridParam','selarrrow');
-                if(ids.length){ 
+                if(ids.length){
                     var postData = jqgrid.jqGrid('getGridParam','postData');
-                	
+
                     jQuery.post(
-            		options.mass_action_url, 
-                    {
-                        'action' : action, 
-                        'ids': ids, 
-                        'selectAll' : selectAll,
-                        '_search': postData._search,
-                        'filters': postData.filters
-                    }, function(response){
-                        jqgrid.trigger("reloadGrid");
-                        jQuery('#t_' + datagridId + ' .mass-action').attr('disabled', true);
-                        jQuery('#t_' + datagridId + ' .submit-action').attr('disabled', true);
-                        var massActionEvent = jQuery.Event('primjeri_datagrid.event.massAction');
-                        massActionEvent.name = gridName;
-                        massActionEvent.action = action;
-                        massActionEvent.response = response;
-                        jQuery("body").trigger(massActionEvent);
-                    });
+                        options.mass_action_url,
+                        {
+                            'action' : action,
+                            'ids': ids,
+                            'selectAll' : selectAll,
+                            '_search': postData._search,
+                            'filters': postData.filters
+                        }, function(response){
+                            jqgrid.trigger("reloadGrid");
+                            jQuery('#t_' + datagridId + ' .mass-action').attr('disabled', true);
+                            jQuery('#t_' + datagridId + ' .submit-action').attr('disabled', true);
+                            var massActionEvent = jQuery.Event('primjeri_datagrid.event.massAction');
+                            massActionEvent.name = gridName;
+                            massActionEvent.action = action;
+                            massActionEvent.response = response;
+                            jQuery("body").trigger(massActionEvent);
+                        });
                 }
             });
 
@@ -356,13 +414,13 @@ jQuery(document).ready(function(){
                 update: function(event, ui) {
                     var row_id = ui.item.attr('id');
                     var row_position = jqgrid.getInd(row_id, false);
-                  
+
                     jQuery.post(
-                        options.sortable_url, 
+                        options.sortable_url,
                         {
                             'row_id': row_id,
                             'row_position': row_position
-                        }, 
+                        },
                         function(response){
                             if(options.driver !== 'array'){
                                 jqgrid.trigger("reloadGrid");
@@ -373,7 +431,7 @@ jQuery(document).ready(function(){
                                 sortableEvent.rowPosition = row_position;
                                 sortableEvent.response = response;
                                 jQuery("body").trigger(sortableEvent);
-                            }                      	
+                            }
                         }
                     );
                 }
@@ -390,41 +448,41 @@ jQuery(document).ready(function(){
 
         /** Overwriting edit button */
         if(options.editBtnEnabled && options.editBtnUri){
-            var edit = jQuery('#edit_' + datagridId).clone(true); 
+            var edit = jQuery('#edit_' + datagridId).clone(true);
             jQuery('#edit_' + datagridId).unbind('click').click(function(){
-            	
-            	var id = jqgrid.jqGrid('getGridParam','selrow');
 
-                if(id != null && selectedRow != null){ 
+                var id = jqgrid.jqGrid('getGridParam','selrow');
+
+                if(id != null && selectedRow != null){
                     var rowData = jQuery.extend({'id': id}, selectedRow);
                     var editUri = decodeURIComponent(options.editBtnUri);
-	            	
+
                     jQuery.each(rowData, function(k,v){
                         editUri = editUri.replace('{' + k + '}', v);
                     });
-	            	
+
                     window.location = editUri;
-                    
+
                 } else {
                     edit.click();
                 }
             });
         }
-	
+
         /** Overwriting delete button */
         if(options.deleteBtnEnabled && options.deleteBtnUri){
-            var del = jQuery('#del_' + datagridId).clone(true); 
+            var del = jQuery('#del_' + datagridId).clone(true);
             jQuery('#del_' + datagridId).unbind('click').click(function(){
-            	var id = jqgrid.jqGrid('getGridParam','selrow');
-            	if(id != null && selectedRow != null){ 
-                    
+                var id = jqgrid.jqGrid('getGridParam','selrow');
+                if(id != null && selectedRow != null){
+
                     var rowData = jQuery.extend({'id': id}, selectedRow);
                     var deleteUri = decodeURIComponent(options.deleteBtnUri);
-                    
+
                     jQuery.each(rowData, function(k,v){
                         deleteUri = deleteUri.replace('{' + k + '}', v);
                     });
-	            	
+
                     window.location = deleteUri;
                 } else {
                     del.click();
@@ -436,7 +494,7 @@ jQuery(document).ready(function(){
 
 /**
  * Building Select options for mass action
- * 
+ *
  * @param massActions
  * @param label (select_action)
  * @returns {String}
@@ -445,7 +503,7 @@ function buildSelectOptions (massActions, label){
 
     var html = '<option value="">'+ label +'</option>';
     jQuery.each(massActions, function(key, value){
-        html += '<option value="'+ key +'">'+ value +'</option>'; 
+        html += '<option value="'+ key +'">'+ value +'</option>';
     });
 
     return html;
@@ -453,7 +511,7 @@ function buildSelectOptions (massActions, label){
 
 /**
  * Toggle mass action buttons
- * 
+ *
  * @param grid
  * @param datagridId
  */
@@ -471,14 +529,14 @@ function toggleMassActionBtns(grid, datagridId)
 
 /**
  * Building error messages for manipulating data
- * 
+ *
  * @param errors
  * @returns {String}
  */
 function buildErrorMessages(errors)
 {
     var html = '<ul>';
-	jQuery.each(errors, function(key, value){
+    jQuery.each(errors, function(key, value){
         html += '<li>' + value + '</li>';
     });
 
@@ -489,26 +547,26 @@ function buildErrorMessages(errors)
 
 /**
  * Building custom buttons
- * 
+ *
  * @param jqgrid
  * @param navGrid
  * @param pager
  * @param options
  */
 function addCustomButtons(jqgrid, navGrid, pager, options)
-{   
+{
 
     jQuery.each(options.customButtons, function(k,v){
-        
+
         navGrid.navButtonAdd(pager,{
-            caption:v.caption, 
-            title:v.title, 
-            buttonicon: v.buttonicon, 
-            onClickButton: function(){ 
+            caption:v.caption,
+            title:v.title,
+            buttonicon: v.buttonicon,
+            onClickButton: function(){
                 var id = jqgrid.jqGrid('getGridParam','selrow');
                 selectedRow = jqgrid.getRowData(id);
 
-                if(id != null && selectedRow != null){ 
+                if(id != null && selectedRow != null){
                     var rowData = jQuery.extend({'id': id}, selectedRow);
                     var uri = decodeURIComponent(v.uri);
 
@@ -519,17 +577,17 @@ function addCustomButtons(jqgrid, navGrid, pager, options)
                     window.location = uri;
 
                 } else {
-                    jQuery('<div></div>').html(options.custom_button_dlg_body).dialog({ 
+                    jQuery('<div></div>').html(options.custom_button_dlg_body).dialog({
                         'title' : options.custom_button_dlg_title,
                         'modal' : true,
                     });
                 }
 
                 return false;
-            }, 
+            },
             position:v.position
         });
-        
+
     });
 
 }
